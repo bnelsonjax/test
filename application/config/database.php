@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = '';
-$db['default']['password'] = '';
-$db['default']['database'] = 'test';
+$db['default']['username'] = 'logicpsa_psa';
+$db['default']['password'] = 'b74xAYM0E7890vsro1Oc';
+$db['default']['database'] = 'logicpsa_psa';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

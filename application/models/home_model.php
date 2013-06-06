@@ -1,6 +1,6 @@
 <?php
 
-class HomeModel extends CI_Model
+class Home_model extends CI_Model
 {
 
     public function index()
@@ -16,4 +16,3 @@ class HomeModel extends CI_Model
 
     }
 }
-?>

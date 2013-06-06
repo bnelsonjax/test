@@ -146,7 +146,7 @@
 		<div id="menu" class="hidden-phone hidden-print">
 
 			<!-- Brand -->
-			<a href="index.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light" class="appbrand">LogicPSA <span>Automate Your IT</span></a>
+			<a href="/" class="appbrand">LogicPSA <span>Automate Your IT</span></a>
 
 			<!-- Scrollable menu wrapper with Maximum height -->
 			<div class="slim-scroll" data-scroll-height="800px">
@@ -178,8 +178,8 @@
 					<ul class="collapse" id="submenu-1">
 
 						<!-- Submenu Level 1 Regular Items -->
-						<li><a href="/Company/viewAll"><span>List Companies</span></a></li>
-						<li><a href="/Company/add"><span>Add Company</span></a></li>
+						<li><a href="/company/viewAll"><span>List Companies</span></a></li>
+						<li><a href="/company/add"><span>Add Company</span></a></li>
 						<!-- // Submenu Level 1 Regular Items END -->
 
 					</ul>
@@ -303,3 +303,4 @@
 
 		</div>
 		<!-- // Sidebar Menu END -->
+        <br>

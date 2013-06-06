@@ -10,16 +10,16 @@ class Company extends CI_Controller {
     public function index()
     {
 	    $this->load->view('templates/header');
-        //$this->load->view('company/add');
+        $this->load->view('company/add');
        	$this->load->view('templates/footer');
     }
 
     public function view($id)
     {
 
-        $this->load->model('CompanyModel');
+        $this->load->model('Company_model');
         $this->load->view('templates/header');
-        $data['result'] = $this->CompanyModel->view();
+        $data['result'] = $this->Company_model->view();
         $this->load->view('company/view', $data);
         $this->load->view('templates/footer');
 
@@ -28,9 +28,9 @@ class Company extends CI_Controller {
     public function viewAll()
     {
 
-        $this->load->model('Companymodel');
+        $this->load->model('Company_model');
         $this->load->view('templates/header');
-        $data['result'] = $this->Companymodel->viewAll();
+        $data['result'] = $this->Company_model->viewAll();
         $this->load->view('company/viewAll', $data);
         $this->load->view('templates/footer');
 
