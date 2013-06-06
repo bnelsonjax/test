@@ -1,0 +1,53 @@
+<?php
+
+class Company extends CI_Controller {
+
+        public function __construct()
+    {
+        parent::__construct();
+    }
+
+    public function index()
+    {
+	    $this->load->view('templates/header');
+        //$this->load->view('company/add');
+       	$this->load->view('templates/footer');
+    }
+
+    public function vie($id)
+    {
+
+        $this->load->model('CompanyModel');
+        $this->load->view('templates/header');
+        $data['result'] = $this->CompanyModel->view();
+        $this->load->view('company/view', $data);
+        $this->load->view('templates/footer');
+
+    }
+
+    public function viewAll()
+    {
+
+        $this->load->model('Companymodel');
+        $this->load->view('templates/header');
+        $data['result'] = $this->Companymodel->viewAll();
+        $this->load->view('company/viewAll', $data);
+        $this->load->view('templates/footer');
+
+    }
+
+	public function test()
+    {
+	    $data['value'] = "This is the data value";
+        $this->load->view('company/add',$data);
+    }
+
+    public function add() {
+        $this->load->view('templates/header');
+	    $data['value'] = "This is the data value";
+        $this->load->view('company/add',$data);
+        $this->load->view('templates/footer');
+    }
+
+}
+?>
