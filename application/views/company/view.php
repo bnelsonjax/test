@@ -1,1 +1,2 @@
-<?php echo $result('id'); ?>
+<?php echo  $data->id; ?>
+<?php echo $data['id']; ?>
