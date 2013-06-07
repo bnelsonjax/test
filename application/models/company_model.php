@@ -25,10 +25,10 @@ class Company_model extends CI_Model {
     public function view($id)
     {
 
-       $this->db->select('*');
+             $q= $this->db->select('*');
              $this->db->from('company');
              $this->db->where('id', $id);
-             $query = $this->db->get();
+
              return $query->result_array();
 
     }
@@ -36,7 +36,7 @@ class Company_model extends CI_Model {
 
     public function viewtest()
     {
-              
+
 
                 $this->db->select('c.id
 									, c.name
