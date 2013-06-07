@@ -49,7 +49,7 @@
 
  ?>
 								<tr class="even gradeC">
-									<td><a href="/WorkOrders/viewWo/<?php  echo $row['id']; ?>">
+									<td><a href="/workorders/viewWo/<?php  echo $row['id']; ?>">
 										<?php  echo $row['id']; ?></a></td>
 									<td><?php  echo $row['status']; ?></td>
 									<td><?php  echo $row['description']; ?></td>

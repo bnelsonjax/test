@@ -22,7 +22,19 @@ class Company_model extends CI_Model {
 
     }
 
-    public function view()
+    public function view($id)
+    {
+
+             $this->db->select('*');
+             $this->db->from('company');
+             $this->db->where('id', $id);
+             $query = $this->db->get('');
+             $this->db->where('user_id', $user_id);
+             return $query->result_array();
+    }
+
+
+    public function viewtest()
     {
 
                 $this->db->select('c.id
@@ -67,3 +79,4 @@ class Company_model extends CI_Model {
     }
 
 }
+?>

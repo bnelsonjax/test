@@ -18,8 +18,8 @@ class Company extends CI_Controller {
     {
 
         $this->load->model('Company_model');
+        $data['result'] = $this->Company_model->view($id);
         $this->load->view('templates/header');
-        $data['result'] = $this->Company_model->view();
         $this->load->view('company/view', $data);
         $this->load->view('templates/footer');
 
@@ -36,18 +36,11 @@ class Company extends CI_Controller {
 
     }
 
-	public function test()
-    {
-	    $data['value'] = "This is the data value";
-        $this->load->view('company/add',$data);
-    }
-
     public function add() {
         $this->load->view('templates/header');
 	    $data['value'] = "This is the data value";
         $this->load->view('company/add',$data);
         $this->load->view('templates/footer');
     }
-
 }
 ?>

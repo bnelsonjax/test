@@ -39,9 +39,9 @@
 																<?php foreach ($result as $row): ?>
 																		<tr class="odd gradeX">
 																				<td><?php echo $row['id'];?></td>
-																				<td><a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/Company/view/<?php echo $row['id']; ?>">
+																				<td><a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/company/view/<?php echo $row['id']; ?>">
 																								<?php echo $row['companyName']; ?></a></td>
-																				<td><a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/Contacts/view/<?php echo $row['conId']; ?>">
+																				<td><a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/contacts/view/<?php echo $row['conId']; ?>">
 																								<?php echo $row['firstName'] . " " . $row['lastName']; ?></a></td>
 																				<td><a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/Company/location/<?php echo $row['lid']; ?>">
 																								<?php echo $row['locationName']; ?></a></td>
