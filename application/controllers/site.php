@@ -3,20 +3,12 @@
 
 class Site extends CI_Controller {
 
-        public function __construct()
-    {
-        parent::__construct();
-    }
+        function index() {
+        $this->load->model('data_model');
+        $data['rows'] = $this->data_model->getAll();
 
-function index($id)
-{
-echo "hellow world". $id;
-}
+        $this->load->view('home_test',$data);
 
-function view()
-{
-echo "hellow world". $id;
-}
-
+        }
 
 }

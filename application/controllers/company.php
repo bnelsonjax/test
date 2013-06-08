@@ -18,7 +18,7 @@ class Company extends CI_Controller {
     {
 
         $this->load->model('Company_model');
-        $data['data'] = $this->Company_model->view($id);
+        $data['result'] = $this->Company_model->view($id);
         $this->load->view('templates/header');
         $this->load->view('company/view', $data);
         $this->load->view('templates/footer');

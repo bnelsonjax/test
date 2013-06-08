@@ -22,17 +22,13 @@ class Company_model extends CI_Model {
 
     }
 
-    public function view($id)
-    {
-
-             $q= $this->db->select('*');
-             $this->db->from('company');
-             $this->db->where('id', $id);
-
-             return $query->result_array();
-
-    }
-
+              function view($id) {
+                $this->db->select('*');
+                $this->db->from('company');
+                $this->db->where('id', '2');
+                $query = $this->db->get();
+                return $query->result_array();
+     }
 
     public function viewtest()
     {
