@@ -1,8 +1,7 @@
 <?php
 class Company_model extends CI_Model {
 
-    public function viewAll()
-    {
+    public function viewAll() {
 
                 $this->db->select('c.id
                         			, c.name AS companyName
@@ -22,22 +21,16 @@ class Company_model extends CI_Model {
 
     }
 
-              function view($id) {
-                $this->db->select('c.name
-                                    ,c.phone
-                                    ,c.active
-                                    ,c.website
-                                    ,c.date_acquired
-                                    ,con.firstName');
+    function view($id) {
+                $this->db->select('c.id, con.firstName');
                 $this->db->from('company c');
                 $this->db->join('contacts con','c.primary_contact = con.id','left');
-                $this->db->where('id', $id);
-                $query = $this->db->get();
+                $this->db->where('c.id', $id);
+                $data = $this->db->get();
                 return $query->row_array();
      }
 
-    public function viewtest()
-    {
+    public function viewtest() {
 
 
                 $this->db->select('c.id
