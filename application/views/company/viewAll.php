@@ -1,70 +1,58 @@
-<br>
-<div class="container">
-		<div id="content">
-				<div id="page-title" class="clearfix">
-						<ul class="breadcrumb">
-								<li>
-										<a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/Home">Home</a> <span class="divider">/</span>
-								</li>
-								<li class="active">Company List</li>
-						</ul>
+<div id="content">
+    <div class="innerLR">
 
-				</div> <!-- /.page-title -->
+	<!-- Widget -->
+	<div class="widget">
 
+		<!-- Widget heading -->
+		<div class="widget-head">
+			<h4 class="heading">View All Companies</h4>
+		</div>
+		<!-- // Widget heading END -->
 
-						<div>
+		<div class="widget-body">
 
-								<div class="widget widget-table">
+			<!-- Table -->
+			<table class="dynamicTable table table-striped table-bordered table-condensed">
 
-										<div class="widget-header">
-												<h3>
-														<i class="icon-th-list"></i>
-														Company List
-												</h3>
-										</div> <!-- /widget-header -->
+				<!-- Table heading -->
+				<thead>
+					<tr>
+						<th>Company ID</th>
+						<th>Company</th>
+						<th>Primary Contact</th>
+						<th>Primary Location</th>
+						<th>Company Type</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<!-- // Table heading END -->
 
-										<div class="widget-content">
-												<table class="table data-table table-striped table-bordered table-highlight" id="example">
-														<thead>
-																<tr>
-																		<th>Company ID</th>
-																		<th>Company</th>
-																		<th>Primary Contact</th>
-																		<th>Primary Location</th>
-																		<th>Company Type</th>
-																		<th>Status</th>
-																</tr>
-														</thead>
-														<tbody>
-																<?php foreach ($result as $row): ?>
-																		<tr class="odd gradeX">
-																				<td><?php echo $row['id'];?></td>
-																				<td><a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/company/view/<?php echo $row['id']; ?>">
-																								<?php echo $row['companyName']; ?></a></td>
-																				<td><a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/contacts/view/<?php echo $row['conId']; ?>">
-																								<?php echo $row['firstName'] . " " . $row['lastName']; ?></a></td>
-																				<td><a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/Company/location/<?php echo $row['lid']; ?>">
-																								<?php echo $row['locationName']; ?></a></td>
-																				<td><?php echo $row['ctype'];?></td>
-																				<td><?php ($row['active']) ? $active = "Active" : $active = "Suspended";
-																				echo $active; ?></td>									
-																		</tr>
-																<?php endforeach; ?>
-														</tbody>
-												</table>
+				<!-- Table body -->
+				<tbody>
+						<?php foreach ($result as $row): ?>
+								<tr class="gradeA">
+										<td><?php echo $row['id'];?></td>
+										<td><a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/company/view/<?php echo $row['id']; ?>">
+														<?php echo $row['companyName']; ?></a></td>
+										<td><a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/contacts/view/<?php echo $row['conId']; ?>">
+														<?php echo $row['firstName'] . " " . $row['lastName']; ?></a></td>
+										<td><a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/Company/location/<?php echo $row['lid']; ?>">
+														<?php echo $row['locationName']; ?></a></td>
+										<td><?php echo $row['ctype'];?></td>
+										<td><?php ($row['active']) ? $active = "Active" : $active = "Suspended";
+										echo $active; ?></td>
+								</tr>
+						<?php endforeach; ?>
+				</tbody>
+				<!-- // Table body END -->
 
+			</table>
+			<!-- // Table END -->
 
-										</div> <!-- /widget-content -->
-
-								</div> <!-- /widget -->
-
-						</div> <!-- /span12 -->
-
-
-
-
-
-
-		</div> <!-- /.container -->
-
-</div> <!-- /#content -->
+		</div>
+	</div>
+	<!-- // Widget END -->
+    </div>
+</div>
+ <!-- /#content -->

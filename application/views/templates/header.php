@@ -24,8 +24,43 @@
 	<!-- Uniform Pretty Checkboxes -->
 	<link href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/forms/pixelmatrix-uniform/css/uniform.default.css" rel="stylesheet" />
 
+	<!-- Bootstrap Extended -->
+	<link href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/bootstrap/extend/jasny-bootstrap/css/jasny-bootstrap.min.css" rel="stylesheet">
+	<link href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/bootstrap/extend/jasny-bootstrap/css/jasny-bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/bootstrap/extend/bootstrap-wysihtml5/css/bootstrap-wysihtml5-0.0.2.css" rel="stylesheet">
+	<link href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/bootstrap/extend/bootstrap-select/bootstrap-select.css" rel="stylesheet" />
+	<link href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/bootstrap/extend/bootstrap-toggle-buttons/static/stylesheets/bootstrap-toggle-buttons.css" rel="stylesheet" />
+
+<!-- Select2 Plugin -->
+	<link href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/forms/select2/select2.css" rel="stylesheet" />
+
+	<!-- DateTimePicker Plugin -->
+	<link href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/forms/bootstrap-datetimepicker/css/datetimepicker.css" rel="stylesheet" />
+
+	<!-- JQueryUI -->
+	<link href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/system/jquery-ui/css/smoothness/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" />
+
+	<!-- MiniColors ColorPicker Plugin -->
+	<link href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/color/jquery-miniColors/jquery.miniColors.css" rel="stylesheet" />
+
+	<!-- Notyfy Notifications Plugin -->
+	<link href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/notifications/notyfy/jquery.notyfy.css" rel="stylesheet" />
+	<link href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/notifications/notyfy/themes/default.css" rel="stylesheet" />
+
+	<!-- Gritter Notifications Plugin -->
+	<link href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/notifications/Gritter/css/jquery.gritter.css" rel="stylesheet" />
+
+	<!-- Easy-pie Plugin -->
+	<link href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/charts/easy-pie/jquery.easy-pie-chart.css" rel="stylesheet" />
+
+	<!-- Google Code Prettify Plugin -->
+	<link href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/other/google-code-prettify/prettify.css" rel="stylesheet" />
+
+	<!-- DataTables Plugin -->
+	<link href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/tables/DataTables/media/css/DT_bootstrap.css" rel="stylesheet" />
+
 	<!-- Main Theme Stylesheet :: CSS -->
-	<link href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/css/style-light.css?1369753444" rel="stylesheet" />
+	<link href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/css/style-light.css?1370657326" rel="stylesheet" />
 
 
 	<!-- LESS.js Library -->
@@ -44,7 +79,7 @@
 
 
 								<!-- Menu Toggle Button -->
-				<button type="button" class="btn btn-navbar">
+			   	<button type="button" class="btn btn-navbar">
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 				</button>
 				<!-- // Menu Toggle Button END -->
@@ -135,7 +170,7 @@
 			</div>
 			<!-- // Wrapper END -->
 
-			<span class="toggle-navbar"></span>
+			<span class="toggle-navbar-hidden"></span>
 		</div>
 		<!-- Top navbar END -->
 
@@ -183,7 +218,6 @@
 						<!-- // Submenu Level 1 Regular Items END -->
 
 					</ul>
-					<span class="count">2</span>
 				</li>
 				<!-- // Submenu Level 1 END -->
 
@@ -198,7 +232,6 @@
 						<!-- // Submenu Level 1 Regular Items END -->
 
 					</ul>
-					<span class="count">2</span>
 				</li>
 				<!-- // Submenu Level 1 (active) END -->
 				<!-- Submenu Level 1 (active) -->
@@ -214,7 +247,7 @@
 						<!-- // Submenu Level 1 Regular Items END -->
 
 					</ul>
-					<span class="count">4</span>
+
 				</li>
 				<!-- // Submenu Level 1 (active) END -->
                 				<!-- Submenu Level 1 (active) -->
@@ -228,7 +261,7 @@
 						<!-- // Submenu Level 1 Regular Items END -->
 
 					</ul>
-					<span class="count">2</span>
+
 				</li>
 				<!-- // Submenu Level 1 (active) END -->
                 				<!-- Submenu Level 1 (active) -->
@@ -242,7 +275,7 @@
 						<!-- // Submenu Level 1 Regular Items END -->
 
 					</ul>
-					<span class="count">2</span>
+
 				</li>
 				<!-- // Submenu Level 1 (active) END -->
                 <!-- Submenu Level 1 (active) -->
@@ -257,7 +290,7 @@
 						<!-- // Submenu Level 1 Regular Items END -->
 
 					</ul>
-					<span class="count">3</span>
+
 				</li>
 				<!-- // Submenu Level 1 (active) END -->
                 <!-- Submenu Level 1 (active) -->
@@ -271,7 +304,7 @@
 						<!-- // Submenu Level 1 Regular Items END -->
 
 					</ul>
-					<span class="count">1</span>
+
 				</li>
 				<!-- // Submenu Level 1 (active) END -->
 
