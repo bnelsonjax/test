@@ -23,7 +23,12 @@ class Company_model extends CI_Model {
     }
 
               function view($id) {
-                $this->db->select('*');
+                $this->db->select('c.name
+                                    ,c.phone
+                                    ,c.active
+                                    ,c.website
+                                    ,c.date_acquired
+                                    ,con.firstName');
                 $this->db->from('company c');
                 $this->db->join('contacts con','c.primary_contact = con.id','left');
                 $this->db->where('id', $id);

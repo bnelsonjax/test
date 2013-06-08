@@ -12,23 +12,21 @@
 						<address class="margin-none">
 							<strong><?php echo $data['address']; ?></strong><br/>
 							<?php echo $data['address2']; ?><br/>
-							408.996.1010<br/>
-							<abbr title="Work email">e-mail:</abbr> <a href="mailto:#">company@mybiz.com</a><br />
-							<abbr title="Work Phone">phone:</abbr> (012) 345-678-901<br/>
+							<abbr title="Website">website:</abbr> <a href="http://<?php echo $data['website']; ?>" target="_blank"><?php echo $data['website']; ?></a><br />
+							<abbr title="Work Phone">phone:</abbr> <?php echo $data['phone']; ?><br/>
 							<abbr title="Work Fax">fax:</abbr> (012) 678-132-901
 						</address>
 					</td>
 					<td class="right">
-						<p class="lead">Client information</p>
-						<h2>John Doe</h2>
 						<address class="margin-none">
-							<strong>Business manager</strong> at
-							<strong><a href="#">Business</a></strong><br>
-							<abbr title="Work email">e-mail:</abbr> <a href="mailto:#">john.doe@mybiz.com</a><br />
-							<abbr title="Work Phone">phone:</abbr> (012) 345-678-901<br/>
-							<abbr title="Work Fax">fax:</abbr> (012) 678-132-901
+							<strong>Status:</strong>
+							<span class="label label-primary"><?php echo $data['active']; ?></span><br>
+                            Primary Contact: <?php echo htmlentities($data['firstName']) . " " . htmlentities($data['lastName']); ?><br>
+							Company added on: <?php echo $data['dateAcquired']; ?><br>
+							<?php if (!$data['dateUpdated']): ?> Last updated: Never <?php else: ?> Last updated:
+                            <?php echo $data['dateUpdated']; ?><br>
+                            <?php endif; ?>
 							<div class="separator line"></div>
-							<p class="margin-none"><strong>Note:</strong><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tristique rutrum libero, vel bibendum nunc.</p>
 						</address>
 					</td>
 				</tr>
