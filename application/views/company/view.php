@@ -12,6 +12,7 @@
 						<address class="margin-none">
 							<strong><?php echo $data['address']; ?></strong><br/>
 							<?php echo $data['address2']; ?><br/>
+                            <?php echo $data['country']; ?><br/>
 							<abbr title="Website">website:</abbr> <a href="http://<?php echo $data['website']; ?>" target="_blank"><?php echo $data['website']; ?></a><br />
 							<abbr title="Work Phone">phone:</abbr> <?php echo $data['phone']; ?><br/>
 							<abbr title="Work Fax">fax:</abbr> (012) 678-132-901
