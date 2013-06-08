@@ -24,10 +24,11 @@ class Company_model extends CI_Model {
 
               function view($id) {
                 $this->db->select('*');
-                $this->db->from('company');
-                $this->db->where('id', '2');
+                $this->db->from('company c');
+                $this->db->join('contacts con','c.primary_contact = con.id','left');
+                $this->db->where('id', $id);
                 $query = $this->db->get();
-                return $query->result_array();
+                return $query->row_array();
      }
 
     public function viewtest()
