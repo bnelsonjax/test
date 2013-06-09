@@ -1,10 +1,10 @@
 <link href="http://login.logicpsa.com/public/css/pages/reports.css" rel="stylesheet">
-<div class="container">
-		<div class="row">
+<div id="content">
+    <div class="innerLR">
             <!-- /START Big Stats Widget-->
           			<div class="span12">
 	      		<div id="big-stats-container" class="widget">
-	      			<div class="widget-content">
+	      			<div class="widget-body">
 	      				<div id="big_stats" class="cf">
 							<div class="stat">
 								<h4>Projects Due Today</h4>
@@ -23,7 +23,7 @@
 								<span class="value">13</span>
 							</div> <!-- .stat -->
 						</div>
-		      		</div> <!-- /widget-content -->
+		      		</div> <!-- /widget-body -->
 	      		</div> <!-- /widget -->
       		</div> <!-- /span12 -->
             <!-- /END Big Stats Widget-->
@@ -35,7 +35,7 @@
 							Open Work Orders
 						</h3>
 					</div> <!-- /.widget-header -->
-					<div class="widget-content">
+					<div class="widget-body">
 						<table class="table table-bordered table-striped table-highlight" id="invoice-details">
 							<thead>
 								<tr>
@@ -56,7 +56,7 @@
 								</tr>
 								<?php endforeach; ?>
 							</table>
-					</div> <!-- /.widget-content -->
+					</div> <!-- /.widget-body -->
 				</div> <!-- /.widget -->
 			</div> <!-- /.span6 -->
 			<div class="span6">
@@ -67,7 +67,7 @@
 							Pending Billing
 						</h3>
 					</div> <!-- /.widget-header -->
-					<div class="widget-content">
+					<div class="widget-body">
 						<table class="table table-bordered table-striped table-highlight">
 							<thead>
 								<tr>
@@ -84,9 +84,8 @@
 								</tr>
 								</tbody>
 							</table>
-					</div> <!-- /.widget-content -->
+					</div> <!-- /.widget-body -->
 				</div> <!-- /.widget -->
 			</div> <!-- /.span6 -->
 		</div> <!-- /.row -->
 </div> <!-- /account-container -->
-<hr style="width: 0%; height: 400px">

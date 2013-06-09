@@ -1,26 +1,8 @@
 <div id="content">
-    <div class="innerLR">
+<div class="separator bottom"></div>
+ <div class="innerLR">
 	<div class="well margin-none">
 		<table class="table">
-                <!-- Button Menu  -->
-                <div class="widget-actions">
-						<div class="btn-group">
-	  					    <button class="btn btn-small"><i class="icon-cog"></i>Options</button>
-    						 <button class="btn btn-small dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-	    					  <ul class="dropdown-menu">
-								<li><a href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/Company/edit/<?php  echo $data['id']; ?>">Edit Company</a></li>
-								<li><a href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/WorkOrders/addWo/<?php  echo $data['id']; ?>">Add Work Order</a></li>
-								<li><a href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/Location/add/<?php  echo $data['id']; ?>">Add Location</a></li>
-								<li><a href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/Equipment/add/<?php  echo $data['id']; ?>">Add Equipment</a></li>
-								<li><a href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/Contacts/add/<?php  echo $data['id']; ?>">Add Contact</a></li>
-						        <li><a href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/Notes/add/<?php  echo $data['id']; ?>">Add Note</a></li>
-                                <li><a href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/Files/add/<?php  echo $data['id']; ?>">Add File</a></li>
-								<li class="divider"></li>
-						        <li><a href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/Company/add">New Company</a></li>
-							 </ul>
-						 </div><!-- /btn-group -->
-				   </div><br>
-                   <!-- Button Menu end -->
         <!-- Company Info Table -->
         <tbody>
 				<tr>
@@ -31,10 +13,10 @@
 							<?php  echo $data['address']; ?> <?php  echo $data['address2']; ?><br/>
                             <?php  echo $data['country']; ?><br/>
                             <br/>
-							<abbr title="Website">website:</abbr> <a href="http://<?php  echo $data['website']; ?>" target="_blank"><?php  echo $data['website']; ?></a><br />
-							<abbr title="Work Phone">phone:</abbr> <?php  echo $data['phone']; ?><br/>
+							<abbr title="Website">Website:</abbr> <a href="http://<?php  echo $data['website']; ?>" target="_blank"><?php  echo $data['website']; ?></a><br />
+							<abbr title="Work Phone">Phone:</abbr> <?php  echo $data['phone']; ?><br/>
                             <abbr title="Company Type">Company Type:</abbr> <?php  echo $data['typeName']; ?><br/>
-							<abbr title="Work Fax">fax:</abbr> <?php  echo $data['fax']; ?>
+							<abbr title="Work Fax">Fax:</abbr> <?php  echo $data['fax']; ?>
 						</address>
 					</td>
 					<td class="right">
@@ -47,6 +29,7 @@
                             <?php  echo $data['dateUpdated']; ?><br>
                             <?php  endif; ?>
 							<div class="separator line"></div>
+                            <a href="edit">Edit Company</a><br>
 						</address>
 					</td>
 				</tr>
@@ -71,7 +54,12 @@
     <div class="tab-content">
          <!-- Tab 1 Start-->
         <div class="tab-pane active" id="tabA-1">
-    		<p><!-- Table -->
+        	<div class="widget" style="margin-top: -1px;">
+            		<!-- Widget heading -->
+		<div class="widget-head">
+		</div>
+		<!-- // Widget heading END -->
+        <!-- Table -->
 			<table class="dynamicTable table table-striped table-bordered table-condensed">
 				<!-- Table heading -->
 				<thead>
@@ -88,8 +76,7 @@
                           <?php  foreach ($notes as $row): ?>
                           <tr class="even gradeA">
                             <td>
-                              <a href=
-                              "/notes/view/<?php  echo $row['nid']; ?>"><?php  echo $row['note']; ?></a>
+                              <a href="/notes/view/<?php  echo $row['nid']; ?>"><?php  echo $row['note']; ?></a>
                             </td>
                             <td><?php  echo $row['notePostedTime']; ?></td>
                             <td>
@@ -101,12 +88,28 @@
 				</tbody>
 				<!-- // Table body END -->
 			</table>
-			<!-- // Table END --></p>
+            </div>
+			<!-- // Table END -->
     	</div>
         <!-- Tab 1 End-->
          <!-- Tab 2 Start-->
         <div class="tab-pane" id="tabA-2">
-    		<p><!-- Table -->
+
+
+                          <!-- Widget -->
+	<div class="widget" style="margin-top: -1px;">
+
+		<!-- Widget heading -->
+		<div class="widget-head">
+			<h4 class="heading"></h4>
+		</div>
+		<!-- // Widget heading END -->
+
+		<div class="widget-body">
+
+
+
+    		<!-- Table -->
 			<table class="dynamicTable table table-striped table-bordered table-condensed">
 				<!-- Table heading -->
 				<thead>
@@ -122,23 +125,36 @@
 				<tbody>
 						<?php  foreach ($contacts as $row): ?>
 								<tr>
-										<td><a href="/Contacts/view/<?php  echo $row['id']; ?>">
-														<?php  echo $row['firstName'] . " " . $row['lastName']; ?></a></td>
+										<td><a href="/Contacts/view/<?php  echo $row['id']; ?>"><?php  echo $row['firstName'] . " " . $row['lastName']; ?></a></td>
 										<td><?php  echo $row['title']; ?></td>
-										<td><a href="mailto:<?php  echo $row['email']; ?>">
-														<?php  echo $row['email']; ?></a></td>
+										<td><a href="mailto:<?php  echo $row['email']; ?>"><?php  echo $row['email']; ?></a></td>
 										<td><?php  echo $row['phone']; ?></td>
 								</tr>
 						<?php  endforeach; ?>
 				</tbody>
-				<!-- // Table body END -->
-			</table>
-			<!-- // Table END --></p>
+			</table><!-- // Table END -->
+            </div>  <!-- // Widget Body END -->
+            </div>  <!-- // Widget END -->
     	</div>
         <!-- Tab 2 End-->
          <!-- Tab 3 Start-->
         <div class="tab-pane" id="tabA-3">
-    		<p><!-- Table -->
+
+                  <!-- Widget -->
+	<div class="widget" style="margin-top: -1px;">
+
+		<!-- Widget heading -->
+		<div class="widget-head">
+			<h4 class="heading"></h4>
+		</div>
+		<!-- // Widget heading END -->
+
+		<div class="widget-body">
+
+
+
+
+        <!-- Table -->
 			<table class="dynamicTable table table-striped table-bordered table-condensed">
 				<!-- Table heading -->
 				<thead>
@@ -165,14 +181,26 @@
                             <td><?php  echo $row['entryDate']; ?></td>
                           </tr><?php  endforeach; ?>
 				</tbody>
-				<!-- // Table body END -->
-			</table>
-			<!-- // Table END --></p>
+			</table><!-- // Table END -->
+            </div>  <!-- // Widget Body END -->
+            </div>  <!-- // Widget  END -->
     	</div>
         <!-- Tab 3 End-->
    <!-- Tab 4 Start-->
         <div class="tab-pane" id="tabA-4">
-    		<p><!-- Table -->
+          <!-- Widget -->
+	<div class="widget" style="margin-top: -1px;">
+
+		<!-- Widget heading -->
+		<div class="widget-head">
+			<h4 class="heading"></h4>
+		</div>
+		<!-- // Widget heading END -->
+
+		<div class="widget-body">
+
+
+            <!-- Table -->
 			<table class="dynamicTable table table-striped table-bordered table-condensed">
 				<!-- Table heading -->
 				<thead>
@@ -188,9 +216,7 @@
                           <?php  foreach ($locations as $row): ?>
                           <tr>
                             <td>
-                              <a href=
-                              "/locations/view/<?php  echo $row['id']; ?>">
-                              <?php  echo htmlentities($row['name']); ?></a>
+                              <a href="/locations/view/<?php  echo $row['id']; ?>"><?php  echo $row['name']; ?></a>
                             </td>
                             <td>
                               <div>
@@ -207,18 +233,28 @@
                             <?php  echo $row['notes']; ?></td>
                           </tr><?php  endforeach; ?>
 				</tbody>
-				<!-- // Table body END -->
-			</table>
-			<!-- // Table END --></p>
-    	</div>
-        <!-- Tab 4 End-->
+			</table><!-- // Table END -->
+                        </div><!-- // Widget Body END -->
+                        </div><!-- // Widget END -->
+    	</div><!-- Tab 4 End-->
+        <!-- Tab 5 Start-->
         <div class="tab-pane" id="tabA-5">
     		<h4>Contracts</h4>
     		<p>Not implented till a future update.</p>
-    	</div>
+    	</div><!-- Tab 5 End-->
 <!-- Tab 6 Start-->
         <div class="tab-pane" id="tabA-6">
-    		<p><!-- Table -->
+    <!-- Widget -->
+	<div class="widget" style="margin-top: -1px;">
+
+		<!-- Widget heading -->
+		<div class="widget-head">
+			<h4 class="heading"></h4>
+		</div>
+		<!-- // Widget heading END -->
+
+		<div class="widget-body">
+    		<!-- Table -->
 			<table class="dynamicTable table table-striped table-bordered table-condensed">
 				<!-- Table heading -->
 				<thead>
@@ -231,13 +267,11 @@
                           </tr>
 				</thead>
 				<!-- // Table heading END -->
-				<!-- Table body -->
 				<tbody>
                           <?php  foreach ($equipment as $row): ?>
                           <tr>
                             <td>
-                              <a href=
-                              "/equipment/view/<?php  echo $row['id']; ?>"><?php  echo $row['name']; ?></a>
+                              <a href="/equipment/view/<?php  echo $row['id']; ?>"><?php  echo $row['name']; ?></a>
                             </td>
                             <td><?php  echo $row['mfrName']; ?></td>
                             <td><?php  echo $row['model']; ?></td>
@@ -246,11 +280,10 @@
                             <?php  echo $row['notes']; ?></td>
                           </tr><?php  endforeach; ?>
 				</tbody>
-				<!-- // Table body END -->
-			</table>
-			<!-- // Table END --></p>
-    	</div>
-        <!-- Tab 6 End-->
+			</table><!-- // Table END -->
+    	</div> <!-- // Widget Body END -->
+        </div>  <!-- // Widget  END -->
+        </div><!-- Tab 6 End-->
         <!-- Tab 7 Start-->
         <div class="tab-pane" id="tabA-7">
         <p>          Coming soon</p>
@@ -258,16 +291,20 @@
         <!-- Tab 7 End-->
 <!-- Tab 8 Start-->
         <div class="tab-pane" id="tabA-8">
-    		<p><!-- Table -->
-             <div class="heading-buttons">
-	<div class="buttons pull-right">
-		<a href="/company/editcc" class="btn btn-inverse btn-icon glyphicons edit"><i></i> Edit</a>
-	</div>
-	<div class="clearfix"></div>
-</div>
-<div class="separator bottom"></div>
+          <!-- Start of Widget -->
+<div class="widget" style="margin-top: -1px;">
+		<!-- Widget heading -->
+		<div class="widget-head">
+			<h4 class="heading"></h4>
+                      	<div class="buttons pull-right">
+          		<a href="/company/editcc" class="btn btn-inverse btn-icon glyphicons edit"><i></i> Edit</a>
+          	</div>
+		</div>
+		<!-- // Widget heading END -->
+		<div class="widget-body">
+          <!-- Table -->
          <table class="dynamicTable table table-striped table-bordered table-condensed">
-				<!-- Table body -->
+         <!-- Table body -->
                  <tbody>
                           <tr>
                             <td>Name on Card:</td>
@@ -302,12 +339,12 @@
                             <td><?php  echo $data['cc_zip']; ?></td>
                           </tr>
                         </tbody>
-				<!-- // Table body END -->
-			</table>
-			<!-- // Table END --></p>
-    	</div>
+			</table>   	<!-- // Table body END -->
+            </div>   <!-- // Widget body
+			<!-- // Table END -->
+    	</div>  <!--Widget End  -->
         <!-- Tab 8 End-->
-    </div>
-    <!-- Tab Bar End-->
-    </div>
-</div>
+    </div> <!-- Tab Bar End-->
+    </div>     <!-- Tab Content End-->
+    </div>     <!-- InnerLR End-->
+</div>     <!-- Content End-->

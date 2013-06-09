@@ -49,6 +49,17 @@ class Company extends CI_Controller {
 
     }
 
+    public function test($id) {
+
+        $this->load->model('Company_model');
+        $data['result'] = $this->Company_model->viewNotes($id);
+        $this->load->view('templates/header');
+        $this->load->view('company/test', $data);
+        $this->load->view('templates/footer');
+
+    }
+
+
     public function add() {
         $this->load->view('templates/header');
 	    $data['value'] = "This is the data value";

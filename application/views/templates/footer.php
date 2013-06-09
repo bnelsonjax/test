@@ -139,6 +139,8 @@
    	<!-- Form Elements Page Demo Script -->
 	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/demo/form_elements.js"></script>
 
+    	<!-- Modals Page Demo Script -->
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/demo/modals.js"></script>
 
 
 </body>
