@@ -254,24 +254,18 @@
         <!-- Tab 7 Start-->
         <div class="tab-pane" id="tabA-7">
         <p>          Coming soon</p>
-
     	</div>
         <!-- Tab 7 End-->
 <!-- Tab 8 Start-->
         <div class="tab-pane" id="tabA-8">
     		<p><!-- Table -->
-
              <div class="heading-buttons">
-	<h3>Credit Card Info</h3>
 	<div class="buttons pull-right">
 		<a href="/company/editcc" class="btn btn-inverse btn-icon glyphicons edit"><i></i> Edit</a>
 	</div>
 	<div class="clearfix"></div>
 </div>
 <div class="separator bottom"></div>
-
-
-
          <table class="dynamicTable table table-striped table-bordered table-condensed">
 				<!-- Table body -->
                  <tbody>
