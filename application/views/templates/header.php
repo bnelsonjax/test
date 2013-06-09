@@ -62,6 +62,8 @@
 	<!-- Main Theme Stylesheet :: CSS -->
 	<link href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/css/style-light.css?1370657326" rel="stylesheet" />
 
+	<!-- Farbtastic ColorPicker Plugin -->
+	<link href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/color/farbtastic/farbtastic.css" rel="stylesheet" />
 
 	<!-- LESS.js Library -->
 	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/system/less.min.js"></script>

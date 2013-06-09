@@ -40,33 +40,33 @@
 	<!-- JQuery -->
 	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/system/jquery.min.js"></script>
 <!-- JQuery -->
-	<script src="../common/theme/scripts/plugins/system/jquery.min.js"></script>
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/system/jquery.min.js"></script>
 
 	<!-- JQueryUI -->
-	<script src="../common/theme/scripts/plugins/system/jquery-ui/js/jquery-ui-1.9.2.custom.min.js"></script>
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/system/jquery-ui/js/jquery-ui-1.9.2.custom.min.js"></script>
 
 	<!-- JQueryUI Touch Punch -->
 	<!-- small hack that enables the use of touch events on sites using the jQuery UI user interface library -->
-	<script src="../common/theme/scripts/plugins/system/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/system/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
 
 
 	<!-- Modernizr -->
-	<script src="../common/theme/scripts/plugins/system/modernizr.js"></script>
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/system/modernizr.js"></script>
 
 	<!-- Bootstrap -->
-	<script src="../common/bootstrap/js/bootstrap.min.js"></script>
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/bootstrap/js/bootstrap.min.js"></script>
 
 	<!-- SlimScroll Plugin -->
-	<script src="../common/theme/scripts/plugins/other/jquery-slimScroll/jquery.slimscroll.min.js"></script>
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/other/jquery-slimScroll/jquery.slimscroll.min.js"></script>
 
 	<!-- Common Demo Script -->
-	<script src="../common/theme/scripts/demo/common.js?1370657326"></script>
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/demo/common.js?1370657326"></script>
 
 	<!-- Holder Plugin -->
-	<script src="../common/theme/scripts/plugins/other/holder/holder.js"></script>
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/other/holder/holder.js"></script>
 
 	<!-- Uniform Forms Plugin -->
-	<script src="../common/theme/scripts/plugins/forms/pixelmatrix-uniform/jquery.uniform.min.js"></script>
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/forms/pixelmatrix-uniform/jquery.uniform.min.js"></script>
 
 	<!-- Bootstrap Extended -->
 	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/bootstrap/extend/bootstrap-select/bootstrap-select.js"></script>
@@ -129,6 +129,15 @@
 
 	<!-- Tables Demo Script -->
 	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/demo/tables.js"></script>
+
+	<!-- ColorPicker -->
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/color/farbtastic/farbtastic.js"></script>
+
+	<!-- Select2 Plugin -->
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/forms/select2/select2.js"></script>
+
+   	<!-- Form Elements Page Demo Script -->
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/demo/form_elements.js"></script>
 
 
 
