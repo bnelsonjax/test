@@ -65,6 +65,9 @@
 	<!-- Farbtastic ColorPicker Plugin -->
 	<link href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/color/farbtastic/farbtastic.css" rel="stylesheet" />
 
+    <!-- DC Twitter CSS -->
+<link href="http://www.dreamtemplate.com/dreamcodes/twitter_tweet/jquery.tweet.css" rel="stylesheet">
+
 	<!-- LESS.js Library -->
 	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/system/less.min.js"></script>
 </head>

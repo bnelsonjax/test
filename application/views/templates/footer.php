@@ -142,6 +142,19 @@
     	<!-- Modals Page Demo Script -->
 	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/demo/modals.js"></script>
 
+    	<!--  Flot Charts Plugin -->
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/charts/flot/jquery.flot.js"></script>
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/charts/flot/jquery.flot.pie.js"></script>
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/charts/flot/jquery.flot.tooltip.js"></script>
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/charts/flot/jquery.flot.selection.js"></script>
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/charts/flot/jquery.flot.resize.js"></script>
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/charts/flot/jquery.flot.orderBars.js"></script>
+
+    	<!-- Charts Helper Demo Script -->
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/demo/charts.helper.js?1370865963"></script>
+
+    	<!-- Dashboard Demo Script -->
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/demo/index.js?1370865963"></script>
 
 </body>
 </html>
