@@ -2,9 +2,14 @@
 
 class Notes extends CI_Controller {
 
-        public function __construct()
+    function __construct()
     {
-        parent::__construct();
+      parent::__construct();
+      session_start();
+
+      if ( !isset($_SESSION['username'])) {
+         redirect('login');
+      }
     }
 
     public function index() {

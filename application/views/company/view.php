@@ -54,297 +54,37 @@
     <div class="tab-content">
          <!-- Tab 1 Start-->
         <div class="tab-pane active" id="tabA-1">
-        	<div class="widget" style="margin-top: -1px;">
-            		<!-- Widget heading -->
-		<div class="widget-head">
-		</div>
-		<!-- // Widget heading END -->
-        <!-- Table -->
-			<table class="dynamicTable table table-striped table-bordered table-condensed">
-				<!-- Table heading -->
-				<thead>
-					<tr>
-						<th>Note</th>
-						<th>Date Posted</th>
-						<th>Posted By</th>
-						<th>Options</th>
-					</tr>
-				</thead>
-				<!-- // Table heading END -->
-				<!-- Table body -->
-				<tbody>
-                          <?php  foreach ($notes as $row): ?>
-                          <tr class="even gradeA">
-                            <td>
-                              <a href="/notes/view/<?php  echo $row['nid']; ?>"><?php  echo $row['note']; ?></a>
-                            </td>
-                            <td><?php  echo $row['notePostedTime']; ?></td>
-                            <td>
-                            <?php  echo htmlentities($row['firstName']) . " " . htmlentities($row['lastName']); ?></td>
-                            <td>
-                              <a href="/notes/edit_note/<?php  echo $row['nid']; ?>">Edit</a> / <a href="/notes/delete_note/<?php  echo $row['nid']; ?>">Remove</a>
-                            </td>
-                          </tr><?php  endforeach; ?>
-				</tbody>
-				<!-- // Table body END -->
-			</table>
-            </div>
-			<!-- // Table END -->
+          <? include("tab-notes.php"); ?>
     	</div>
-        <!-- Tab 1 End-->
+<!-- Tab 1 End-->
          <!-- Tab 2 Start-->
         <div class="tab-pane" id="tabA-2">
-
-
-                          <!-- Widget -->
-	<div class="widget" style="margin-top: -1px;">
-
-		<!-- Widget heading -->
-		<div class="widget-head">
-			<h4 class="heading"></h4>
-		</div>
-		<!-- // Widget heading END -->
-
-		<div class="widget-body">
-
-
-
-    		<!-- Table -->
-			<table class="dynamicTable table table-striped table-bordered table-condensed">
-				<!-- Table heading -->
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Title</th>
-						<th>Email</th>
-						<th>Phone</th>
-					</tr>
-				</thead>
-				<!-- // Table heading END -->
-				<!-- Table body -->
-				<tbody>
-						<?php  foreach ($contacts as $row): ?>
-								<tr>
-										<td><a href="/Contacts/view/<?php  echo $row['id']; ?>"><?php  echo $row['firstName'] . " " . $row['lastName']; ?></a></td>
-										<td><?php  echo $row['title']; ?></td>
-										<td><a href="mailto:<?php  echo $row['email']; ?>"><?php  echo $row['email']; ?></a></td>
-										<td><?php  echo $row['phone']; ?></td>
-								</tr>
-						<?php  endforeach; ?>
-				</tbody>
-			</table><!-- // Table END -->
-            </div>  <!-- // Widget Body END -->
-            </div>  <!-- // Widget END -->
-    	</div>
-        <!-- Tab 2 End-->
-         <!-- Tab 3 Start-->
+          <? include("tab-contacts.php"); ?>
+    	</div><!-- Tab 2 End-->
+<!-- Tab 3 Start-->
         <div class="tab-pane" id="tabA-3">
-
-                  <!-- Widget -->
-	<div class="widget" style="margin-top: -1px;">
-
-		<!-- Widget heading -->
-		<div class="widget-head">
-			<h4 class="heading"></h4>
-		</div>
-		<!-- // Widget heading END -->
-
-		<div class="widget-body">
-
-
-
-
-        <!-- Table -->
-			<table class="dynamicTable table table-striped table-bordered table-condensed">
-				<!-- Table heading -->
-				<thead>
-                         <tr>
-                            <th>Work Order ID</th>
-                            <th>Status</th>
-                            <th>Description</th>
-                            <th>Priority</th>
-                            <th>Date Created</th>
-                          </tr>
-				</thead>
-				<!-- // Table heading END -->
-				<!-- Table body -->
-				<tbody>
-                          <?php  foreach ($workorder as $row): ?>
-                          <tr>
-                            <td>
-                              <a href="/WorkOrders/viewWo/<?php  echo $row['id']; ?>"><?php  echo $row['id']; ?></a>
-                            </td>
-                            <td><?php  echo $row['status']; ?></td>
-                            <td>
-                            <?php  echo $row['description']; ?></td>
-                            <td><?php  echo $row['priority']; ?></td>
-                            <td><?php  echo $row['entryDate']; ?></td>
-                          </tr><?php  endforeach; ?>
-				</tbody>
-			</table><!-- // Table END -->
-            </div>  <!-- // Widget Body END -->
-            </div>  <!-- // Widget  END -->
-    	</div>
-        <!-- Tab 3 End-->
-   <!-- Tab 4 Start-->
+          <? include("tab-wo.php"); ?>
+    	</div><!-- Tab 3 End-->
+<!-- Tab 4 Start-->
         <div class="tab-pane" id="tabA-4">
-          <!-- Widget -->
-	<div class="widget" style="margin-top: -1px;">
-
-		<!-- Widget heading -->
-		<div class="widget-head">
-			<h4 class="heading"></h4>
-		</div>
-		<!-- // Widget heading END -->
-
-		<div class="widget-body">
-
-
-            <!-- Table -->
-			<table class="dynamicTable table table-striped table-bordered table-condensed">
-				<!-- Table heading -->
-				<thead>
-                          <tr>
-                            <th>Name</th>
-                            <th>Address</th>
-                            <th>Notes</th>
-                          </tr>
-				</thead>
-				<!-- // Table heading END -->
-				<!-- Table body -->
-				<tbody>
-                          <?php  foreach ($locations as $row): ?>
-                          <tr>
-                            <td>
-                              <a href="/locations/view/<?php  echo $row['id']; ?>"><?php  echo $row['name']; ?></a>
-                            </td>
-                            <td>
-                              <div>
-                                <?php  echo $row['address']; ?>
-                              </div>
-                              <div>
-                                <?php  echo $row['address2']; ?>
-                              </div>
-                              <div>
-                                <?php  echo $row['city'] . ", " . $row['state'] . " " .$row['zip']; ?>
-                              </div>
-                            </td>
-                            <td>
-                            <?php  echo $row['notes']; ?></td>
-                          </tr><?php  endforeach; ?>
-				</tbody>
-			</table><!-- // Table END -->
-                        </div><!-- // Widget Body END -->
-                        </div><!-- // Widget END -->
+            <? include("tab-location.php"); ?>
     	</div><!-- Tab 4 End-->
-        <!-- Tab 5 Start-->
-        <div class="tab-pane" id="tabA-5">
-    		<h4>Contracts</h4>
-    		<p>Not implented till a future update.</p>
+<!-- Tab 5 Start-->
+        <div class="tab-pane widget-body-regular" id="tabA-5">
+            <? include("tab-contracts.php"); ?>
     	</div><!-- Tab 5 End-->
 <!-- Tab 6 Start-->
         <div class="tab-pane" id="tabA-6">
-    <!-- Widget -->
-	<div class="widget" style="margin-top: -1px;">
-
-		<!-- Widget heading -->
-		<div class="widget-head">
-			<h4 class="heading"></h4>
-		</div>
-		<!-- // Widget heading END -->
-
-		<div class="widget-body">
-    		<!-- Table -->
-			<table class="dynamicTable table table-striped table-bordered table-condensed">
-				<!-- Table heading -->
-				<thead>
-                          <tr>
-                            <th>Location</th>
-                            <th>Manufacturer</th>
-                            <th>Model</th>
-                            <th>Serial</th>
-                            <th>Notes</th>
-                          </tr>
-				</thead>
-				<!-- // Table heading END -->
-				<tbody>
-                          <?php  foreach ($equipment as $row): ?>
-                          <tr>
-                            <td>
-                              <a href="/equipment/view/<?php  echo $row['id']; ?>"><?php  echo $row['name']; ?></a>
-                            </td>
-                            <td><?php  echo $row['mfrName']; ?></td>
-                            <td><?php  echo $row['model']; ?></td>
-                            <td><?php  echo $row['serial']; ?></td>
-                            <td>
-                            <?php  echo $row['notes']; ?></td>
-                          </tr><?php  endforeach; ?>
-				</tbody>
-			</table><!-- // Table END -->
-    	</div> <!-- // Widget Body END -->
-        </div>  <!-- // Widget  END -->
+           <? include("tab-equipment.php"); ?>
         </div><!-- Tab 6 End-->
-        <!-- Tab 7 Start-->
+<!-- Tab 7 Start-->
         <div class="tab-pane" id="tabA-7">
-        <p>          Coming soon</p>
-    	</div>
-        <!-- Tab 7 End-->
+           <? include("tab-files.php"); ?>
+    	</div><!-- Tab 7 End-->
 <!-- Tab 8 Start-->
         <div class="tab-pane" id="tabA-8">
-          <!-- Start of Widget -->
-<div class="widget" style="margin-top: -1px;">
-		<!-- Widget heading -->
-		<div class="widget-head">
-			<h4 class="heading"></h4>
-                      	<div class="buttons pull-right">
-          		<a href="/company/editcc" class="btn btn-inverse btn-icon glyphicons edit"><i></i> Edit</a>
-          	</div>
-		</div>
-		<!-- // Widget heading END -->
-		<div class="widget-body">
-          <!-- Table -->
-         <table class="dynamicTable table table-striped table-bordered table-condensed">
-         <!-- Table body -->
-                 <tbody>
-                          <tr>
-                            <td>Name on Card:</td>
-                            <td><?php  echo $data['cc_name']; ?></td>
-                          </tr>
-                          <tr>
-                            <td>Card Number:</td>
-                            <td><?php  echo $data['cc_num']; ?></td>
-                          </tr>
-                          <tr>
-                            <td>Card Expiration:</td>
-                            <td><?php  echo $data['cc_expmm']; ?>/<?php  echo $data['cc_expyy']; ?></td>
-                          </tr>
-                          <tr>
-                            <td>Card CCV:</td>
-                            <td><?php  echo $data['cc_ccv']; ?></td>
-                          </tr>
-                          <tr>
-                            <td>Card Billing Address:</td>
-                            <td><?php  echo $data['cc_address']; ?></td>
-                          </tr>
-                          <tr>
-                            <td>Card Billing City:</td>
-                            <td><?php  echo $data['cc_city']; ?></td>
-                          </tr>
-                          <tr>
-                            <td>Card Billing State:</td>
-                            <td><?php  echo $data['cc_state']; ?></td>
-                          </tr>
-                          <tr>
-                            <td>Card Billing Zip:</td>
-                            <td><?php  echo $data['cc_zip']; ?></td>
-                          </tr>
-                        </tbody>
-			</table>   	<!-- // Table body END -->
-            </div>   <!-- // Widget body
-			<!-- // Table END -->
-    	</div>  <!--Widget End  -->
-        <!-- Tab 8 End-->
-    </div> <!-- Tab Bar End-->
+        <? include("tab-cc.php"); ?>
+        </div><!-- Tab 8 End-->
     </div>     <!-- Tab Content End-->
     </div>     <!-- InnerLR End-->
 </div>     <!-- Content End-->

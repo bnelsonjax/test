@@ -157,7 +157,7 @@
 							</li>
 							<li>
 								<span>
-									<a class="btn btn-default btn-mini pull-right" href="login.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light">Sign Out</a>
+									<a class="btn btn-default btn-mini pull-right" href="/admin/logout">Sign Out</a>
 								</span>
 							</li>
 						</ul>
@@ -190,13 +190,12 @@
 
 			<!-- Sidebar Profile -->
 			<span class="profile">
-				<p>Welcome <a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light">mosaicpro</a></p>
-				<a class="img" href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light"><img src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/images/avatar-style-light.jpg" alt="Avatar" /></a>
+				<p>Welcome <a href="my_account"<?php  echo $_SESSION['username']; ?></a></p>
+				<a class="img" href="my_account"><img src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/images/avatar-style-light.jpg" alt="Avatar" /></a>
 				<span>
 					<ul>
 						<li><a href="" class="glyphicons lock"><i></i>Account</a></li>
-						<li><a href="" class="glyphicons keys"><i></i>Password</a></li>
-						<li><a href="" class="glyphicons eject"><i></i>Logout</a></li>
+						<li><a href="/admin/logout" class="glyphicons eject"><i></i>Logout</a></li>
 					</ul>
 				</span>
 			</span>
