@@ -105,11 +105,40 @@
     </div> <!-- End Row-Fluid -->
 <!-- End of Work Order Widget-->
 
-     <!-- // Twitter News -->
-	<div class="tickertape">
-<center>Twitter Feed Here</center>
+
+	<div class="widget" style="margin-top: -1px;">
+		<!-- Widget heading -->
+		<!-- // Widget heading END -->
+		<div class="widget-body">
+
+
+								<!-- Twitter Section -->
+									<h5 class="glyphicons single twitter"><i></i> Latest from Twitter</h5>
+									<section class="twitter-feed">
+										<div class="row-fluid">
+											<div class="span12">
+												<div class="tweet">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nunc lorem, rutrum non porta. <span class="label label-inverse">01/11/2012</span></div>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+									</section>
+									<!-- Twitter Section END -->
+
+
+		</div>
 	</div>
-    <!-- // Twitter News -->
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<!-- Website Traffic Chart -->
 	<div class="widget" data-toggle="collapse-widget">
@@ -121,7 +150,6 @@
 		</div>
 	</div>
 	<!-- // Website Traffic Chart END -->
-
     </div>
 	</div>
 </div>

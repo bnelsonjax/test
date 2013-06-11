@@ -1,18 +1,15 @@
 <?php
+
 class Admin extends CI_Controller {
 
     function __construct()
     {
       parent::__construct();
       session_start();
-
     }
 
-    public function index() {
-
-    }
-
-    public function login() {
+    public function index()
+    {
 
         $this->load->library('form_validation');
         $this->form_validation->set_rules('email', 'Email Address', 'required|valid_email');
@@ -28,13 +25,16 @@ class Admin extends CI_Controller {
                         $this->input->post('password')
                         );
 
+
+
             if ($res !== false) {
                 //person has account
                 $_SESSION['username']  = $this->input->post('email');
                 redirect('../home');
             }
         }
-        $this->load->view('adminLogin');
+        $data['data'] = "Username or Password Incorrect";
+        $this->load->view('adminLogin', $data);
     }
 
     public function logout() {
@@ -46,4 +46,3 @@ class Admin extends CI_Controller {
 
 
 }
-?>

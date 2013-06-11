@@ -1,3 +1,19 @@
+<?php
+
+if ( $data['active'] === '1' )
+{
+$active = 'Active';
+$class = 'label label-primary';
+}
+else
+{
+$active = 'Suspended';
+$class = 'label label-danger';
+}
+
+
+?>
+
 <div id="content">
 <div class="separator bottom"></div>
  <div class="innerLR">
@@ -11,24 +27,26 @@
 						<h2><?php  echo $data['name']; ?></h2>
 						<address class="margin-none">
 							<?php  echo $data['address']; ?> <?php  echo $data['address2']; ?><br/>
+                            <?php  echo $data['city']; ?> <?php  echo $data['state']; ?> <?php  echo $data['zip']; ?><br/>
                             <?php  echo $data['country']; ?><br/>
                             <br/>
-							<abbr title="Website">Website:</abbr> <a href="http://<?php  echo $data['website']; ?>" target="_blank"><?php  echo $data['website']; ?></a><br />
-							<abbr title="Work Phone">Phone:</abbr> <?php  echo $data['phone']; ?><br/>
-                            <abbr title="Company Type">Company Type:</abbr> <?php  echo $data['typeName']; ?><br/>
-							<abbr title="Work Fax">Fax:</abbr> <?php  echo $data['fax']; ?>
+							<abbr title="Website">Website:</abbr><a href="http://<?php  echo $data['website']; ?>" target="_blank"><?php  echo $data['website']; ?></a><br />
+							<abbr title="Work Phone">Phone:</abbr>   <?php  echo $data['phone']; ?><br/>
+                            <abbr title="Company Type">Company Type:</abbr>   <?php  echo $data['typeName']; ?><br/>
+							<abbr title="Work Fax">Fax:</abbr>   <?php  echo $data['fax']; ?>
 						</address>
 					</td>
 					<td class="right">
 						<address class="margin-none">
 							<strong>Status:</strong>
-							<span class="label label-primary"><?php  echo $data['active']; ?></span><br>
-                            Primary Contact: <?php  echo htmlentities($data['firstName']) . " " . htmlentities($data['lastName']); ?><br>
+							<span class="<?php echo $class; ?>"><?php  echo $active; ?></span><br>
+                            Primary Contact: <?php  echo $data['firstName'] . " " . $data['lastName']; ?><br>
 							Company added on: <?php  echo $data['dateAcquired']; ?><br>
 							<?php  if (!$data['dateUpdated']): ?> Last updated: Never <?php  else : ?> Last updated:
                             <?php  echo $data['dateUpdated']; ?><br>
                             <?php  endif; ?>
 							<div class="separator line"></div>
+                            <abbr title="Google Map"><a href="#">City Map:</a></abbr><br>
                             <a href="edit">Edit Company</a><br>
 						</address>
 					</td>
