@@ -1,15 +1,14 @@
 <?php
 
-class Home extends CI_Controller
- {
+class Home extends CI_Controller {
 
     function __construct()
     {
-        session_start();
-        parent::__construct();
+      parent::__construct();
+      session_start();
 
       if ( !isset($_SESSION['username'])) {
-         redirect('login');
+         redirect('admin');
       }
     }
 
@@ -25,5 +24,4 @@ class Home extends CI_Controller
 
 
 
-    }
-?>
+}

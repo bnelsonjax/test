@@ -30,7 +30,7 @@ class Admin extends CI_Controller {
             if ($res !== false) {
                 //person has account
                 $_SESSION['username']  = $this->input->post('email');
-                redirect('../home');
+                redirect('home');
             }
         }
         $data['data'] = "Username or Password Incorrect";

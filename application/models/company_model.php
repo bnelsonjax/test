@@ -1,5 +1,11 @@
 <?php
+
 class Company_model extends CI_Model {
+
+    function __construct()
+    {
+
+    }
 
     public function viewAll() {
 
@@ -144,4 +150,3 @@ class Company_model extends CI_Model {
                 return $query->result_array();
 	}
 }
-?>

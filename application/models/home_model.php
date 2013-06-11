@@ -1,8 +1,12 @@
 <?php
 
-class Home_model extends CI_Model
-{
+class Home_model extends CI_Model {
 
+    function __construct()
+    {
+
+    }
+    
     public function index()
     {
 

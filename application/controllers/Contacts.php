@@ -8,7 +8,7 @@ class Contacts extends CI_Controller {
       session_start();
 
       if ( !isset($_SESSION['username'])) {
-         redirect('login');
+         redirect('admin');
       }
     }
 
@@ -36,4 +36,3 @@ class Contacts extends CI_Controller {
 
 
 }
-?>

@@ -1,8 +1,11 @@
 <?php
 
+class Data_model extends CI_Model {
 
-class Data_model extends CI_Model
-{
+    function __construct()
+    {
+
+    }
        /*
         function getAll() {
         $q = $this->db->query('SELECT * FROM test_data');

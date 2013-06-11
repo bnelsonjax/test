@@ -8,7 +8,7 @@ class Notes extends CI_Controller {
       session_start();
 
       if ( !isset($_SESSION['username'])) {
-         redirect('login');
+         redirect('admin');
       }
     }
 
@@ -51,7 +51,7 @@ class Notes extends CI_Controller {
 		}
 
     public function edit($id) {
-        $this->model('Notes');
+        $this->model('Notes_model');
 
         if (isset($_POST["edit"]))
         {
@@ -74,10 +74,9 @@ class Notes extends CI_Controller {
     }
 
     public function printNote($id) {
-        $this->model('Notes');
-        $data      = $this->_model->view($id);
-		$this->_load->view('notes/print', $data);
+        $this->load->model('Notes_model');
+        $data['data']  = $this->Notes_model->view($id);
+		$this->load->view('notes/print', $data);
 
     }
 }
-?>

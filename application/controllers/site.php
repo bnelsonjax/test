@@ -1,14 +1,14 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
 
 class Site extends CI_Controller {
 
     function __construct()
     {
-        session_start();
-        parent::__construct();
+      parent::__construct();
+      session_start();
 
       if ( !isset($_SESSION['username'])) {
-         redirect('login');
+         redirect('admin');
       }
     }
 

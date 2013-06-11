@@ -1,5 +1,11 @@
 <?php
+
 class Notes_model extends CI_Model {
+
+    function __construct()
+    {
+
+    }
 
     function view($id) {
                 $this->db->select('cn.id as nid
@@ -39,4 +45,3 @@ class Notes_model extends CI_Model {
 	}
 
 }
-?>

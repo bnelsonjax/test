@@ -8,7 +8,7 @@ class Company extends CI_Controller {
       session_start();
 
       if ( !isset($_SESSION['username'])) {
-         redirect('login');
+         redirect('admin');
       }
     }
 
@@ -72,4 +72,3 @@ class Company extends CI_Controller {
         $this->load->view('templates/footer');
     }
 }
-?>

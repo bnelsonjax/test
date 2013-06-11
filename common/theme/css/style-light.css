@@ -5060,6 +5060,9 @@ textarea {
 .label.label-warning {
   background: #ab7a4b;
 }
+.label.label-danger {
+  background: #CC0818;
+}
 .label.label-important {
   background: #bd362f;
 }

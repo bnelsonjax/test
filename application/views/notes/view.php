@@ -34,13 +34,13 @@
 				<div class="widget">
                 		<!-- Widget heading -->
 		<div class="widget-head">
-          <h4 class="heading">Note Options</h4> 
+          <h4 class="heading">Note Options</h4>
 		</div>
 		<!-- // Widget heading END -->
 					<div class="widget-body">
-                    <p><a href="/notes/edit/<?php  echo $data['nid']; ?>"><span class="btn btn-default btn-icon glyphicons edit"><i></i>Edit Note</span></a></p>
-                    <p><span data-toggle="print" class="btn btn-default btn-icon glyphicons print"><i></i>Print Note</span></p>
-                    <p><a href="#modal-simple" data-toggle="modal"><span class="btn btn-default btn-icon glyphicons circle_minus"><i></i>Delete Note</span></a></p>
+                    <p><a href="/notes/edit/<?php  echo $data['nid']; ?>">Edit Note</a></p>
+                    <p><a href="/notes/printNote/<?php  echo $data['nid']; ?>">Print Note</a></p>
+                    <p><a href="#modal-simple" data-toggle="modal">Delete Note</a></p>
                     </div> <!-- /.widget-content -->
 				</div> <!-- /.widget -->
 			</div> <!-- /.span4 -->
