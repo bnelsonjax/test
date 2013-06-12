@@ -1,3 +1,4 @@
+
 <div class="modal hide fade">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -14,16 +15,27 @@
 
 <div id="content">
     <div class="innerLR">
+
+	<!-- BreadCrumb Widget -->
+    <div class="widget">
+		<!-- BreadCrumb -->
+		<div class="widget-head">
+			<h3 class="heading"><a href="/">Home</a> <i class="icon-chevron-right"></i> <a href="/company/view/<?php echo $data['cid']; ?>">View Company</a> <i class="icon-chevron-right"></i> View Note</h3>
+		</div>
+		<!-- // BreadCrumb END -->
+	</div>
+	<!-- // BreadCrumb Widget END -->
+
+
+
 		    <div class="span8">
 	      		<div class="widget">
                 		<!-- Widget heading -->
 		<div class="widget-head">
-			<h4 class="heading">Data Table</h4>
+			<h4 class="heading">View Note ID: <?php  echo $data['nid']; ?></h4>
 		</div>
 		<!-- // Widget heading END -->
 					<div class="widget-body">
-						<h3>View Note ID: <?php  echo $data['nid']; ?></h3>
-                    <hr>
 						<p><strong>Note Detail:</strong> <?php  echo $data['note']; ?></p>
                         <p><strong>Posted By:</strong> <?php  echo $data['firstName']; ?> <?php  echo $data['lastName']; ?></p>
                         <p><strong>On:</strong> <?php  echo $data['notePostedTime']; ?></p>

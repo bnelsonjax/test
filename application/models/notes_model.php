@@ -50,6 +50,18 @@ class Notes_model extends CI_Model {
 
 	}
 
+	public function add($id)
+	{
+
+              $data = array(
+               'note' => $_POST['note']
+            );
+              $this->db->where('id', $id);
+              $this->db->insert('company_notes', $data);
+
+
+	}
+
      public function delete($id)	{
 
                 $this->db->where('id', $id);

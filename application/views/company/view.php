@@ -47,7 +47,6 @@ $class = 'label label-danger';
                             <?php  endif; ?>
 							<div class="separator line"></div>
                             <abbr title="Google Map"><a href="#">City Map:</a></abbr><br>
-                            <a href="edit">Edit Company</a><br>
 						</address>
 					</td>
 				</tr>

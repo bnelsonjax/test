@@ -4,6 +4,17 @@
 <div class="separator bottom"></div>
 <!-- // Heading END -->
 <div class="innerLR">
+
+	<!-- BreadCrumb Widget -->
+    <div class="widget">
+		<!-- BreadCrumb -->
+		<div class="widget-head">
+			<h3 class="heading"><a href="/">Home</a> / <a href="/company/view/<?php echo $data['cid']; ?>">View Company</a> / Edit Note</h3>
+		</div>
+		<!-- // BreadCrumb END -->
+	</div>
+	<!-- // BreadCrumb Widget END -->
+
 	<!-- Widget -->
 	<div class="widget" style="margin-top: -1px;">
 		<!-- Widget heading -->

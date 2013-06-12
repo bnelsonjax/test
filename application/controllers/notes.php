@@ -9,13 +9,10 @@ class Notes extends CI_Controller {
       $this->load->model('Notes_model');
       //$this->load->helper(form);
 
-      if ( !isset($_SESSION['username'])) {
-         redirect('admin');
-      }
-    }
-
-    public function index() {
-
+            if ( !isset($_SESSION['username']))
+            {
+               redirect('admin');
+            }
     }
 
     public function view($id) {
@@ -29,25 +26,19 @@ class Notes extends CI_Controller {
 
     public function add() {
 
-    		if (isset($_POST["add"]))
+            if (isset($_POST["add"]))
     		{
-    				$this->model('Notes');
-    				$this->_model->add();
-    				$url = "/Company/view/".$_POST['companyId'];
-    				\Logic\System\Lib\Helper::redirect($url);
+    			$this->Notes_model->add($id);
+    			$url = "/notes/view/" . $id;
+    			redirect($url);
     		}
+        $this->load->view('templates/header');
+        $this->load->view('notes/add', $data);
+        $this->load->view('templates/footer');
 
-    		$this->model('Company');
-    		$id = \Logic\System\Lib\Helper::getUrlParam();
-    		$data = $this->_model->getCompanyId($id);
-    		$data['note'] = $this->_model->viewLocations($id);
-    		$this->_load->header();
-    		$this->_load->view('notes/add', $data);
-    		$this->footer();
     }
 
-
-        public function edit($id) {
+    public function edit($id) {
 
     		if (isset($_POST["edit"]))
     		{
@@ -59,24 +50,20 @@ class Notes extends CI_Controller {
         $this->load->view('templates/header');
         $this->load->view('notes/edit', $data);
         $this->load->view('templates/footer');
-   }
-
-	function success() {
-			echo 'this form has been successfully submitted with all validation being passed. All messages or logic here. Please note
-			sessions have not been used and would need to be added in to suit your app';
     }
 
     public function delete($id) {
-                $this->Notes_model->delete($id);
-                $this->load->view('templates/header');
-                $this->load->view('notes/view', $cid);
-                $this->load->view('templates/footer');
+        $this->Notes_model->delete($id);
+        $this->load->view('templates/header');
+        $this->load->view('notes/view', $cid);
+        $this->load->view('templates/footer');
+
     }
 
     public function printNote($id) {
 
         $data['data']  = $this->Notes_model->view($id);
-		$this->load->view('notes/print', $data);
+   		$this->load->view('notes/print', $data);
 
     }
 }
