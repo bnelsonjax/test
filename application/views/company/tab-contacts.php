@@ -35,7 +35,7 @@
 				<tbody>
 						<?php  foreach ($contacts as $row): ?>
 								<tr>
-										<td><a href="/Contacts/view/<?php  echo $row['id']; ?>"><?php  echo $row['firstName'] . " " . $row['lastName']; ?></a></td>
+										<td><a href="/contacts/view/<?php  echo $row['id']; ?>"><?php  echo $row['firstName'] . " " . $row['lastName']; ?></a></td>
 										<td><?php  echo $row['title']; ?></td>
 										<td><a href="mailto:<?php  echo $row['email']; ?>"><?php  echo $row['email']; ?></a></td>
 										<td><?php  echo $row['phone']; ?></td>

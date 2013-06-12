@@ -26,7 +26,8 @@
 										</h3>
 								</div> <!-- /widget-header -->
 								<div class="widget-content">
-										<form class="form-horizontal" method="post" action="/notes/add">
+										<form class="form-horizontal" method="post" action="/notes/add/<?php echo $data['cid']; ?>">
+                                        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name()?>" value="<?php echo $this->security->get_csrf_hash()?>">
 										<fieldset>
 												<div class="control-group">
 														<label class="control-label" for="notes">Note</label>
@@ -35,7 +36,7 @@
 														</div>
 												</div>
 												<div class="form-actions">
-														<input type="hidden" name="companyId" value="<?php echo $data['id']; ?>" />
+														<input type="hidden" name="cid" value="<?php echo $data['cid']; ?>" />
 														<button type="submit" name="add" class="btn btn-primary btn">Save</button>
 														<button class="btn btn">Cancel</button>
 												</div>

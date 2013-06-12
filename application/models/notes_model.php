@@ -54,7 +54,8 @@ class Notes_model extends CI_Model {
 	{
 
               $data = array(
-               'note' => $_POST['note']
+                'note' => $_POST['note']
+               ,'cid' => $_POST['cid']
             );
               $this->db->where('id', $id);
               $this->db->insert('company_notes', $data);
@@ -67,5 +68,6 @@ class Notes_model extends CI_Model {
                 $this->db->where('id', $id);
                 $this->db->delete('company_notes');
 	}
+
 
 }

@@ -24,14 +24,15 @@ class Notes extends CI_Controller {
 
     }
 
-    public function add() {
+    public function add($id) {
 
             if (isset($_POST["add"]))
     		{
-    			$this->Notes_model->add($id);
-    			$url = "/notes/view/" . $id;
-    			redirect($url);
+    		 $this->Notes_model->add($id);
+    		 $url = "/notes/view/" . $this->db->insert_id() ;
+    		 redirect($url);
     		}
+        $data['data']  = $id;
         $this->load->view('templates/header');
         $this->load->view('notes/add', $data);
         $this->load->view('templates/footer');
@@ -55,7 +56,7 @@ class Notes extends CI_Controller {
     public function delete($id) {
         $this->Notes_model->delete($id);
         $this->load->view('templates/header');
-        $this->load->view('notes/view', $cid);
+        $this->load->view('company/view', $cid);
         $this->load->view('templates/footer');
 
     }
@@ -66,4 +67,11 @@ class Notes extends CI_Controller {
    		$this->load->view('notes/print', $data);
 
     }
+
+    public function test(){
+
+    print_r($this->session->userdata);
+    }
+
+
 }

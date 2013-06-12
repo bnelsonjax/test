@@ -30,10 +30,10 @@ $class = 'label label-danger';
                             <?php  echo $data['city']; ?> <?php  echo $data['state']; ?> <?php  echo $data['zip']; ?><br/>
                             <?php  echo $data['country']; ?><br/>
                             <br/>
-							<abbr title="Website">Website:</abbr><a href="http://<?php  echo $data['website']; ?>" target="_blank"><?php  echo $data['website']; ?></a><br />
-							<abbr title="Work Phone">Phone:</abbr>   <?php  echo $data['phone']; ?><br/>
-                            <abbr title="Company Type">Company Type:</abbr>   <?php  echo $data['typeName']; ?><br/>
-							<abbr title="Work Fax">Fax:</abbr>   <?php  echo $data['fax']; ?>
+							<abbr title="Website">Website: &nbsp;</abbr><a href="http://<?php  echo $data['website']; ?>" target="_blank"><?php  echo $data['website']; ?></a><br />
+							<abbr title="Work Phone">Phone:&nbsp;</abbr>   <?php  echo $data['phone']; ?><br/>
+                            <abbr title="Company Type">Company Type:&nbsp;</abbr>   <?php  echo $data['typeName']; ?><br/>
+							<abbr title="Work Fax">Fax:&nbsp;</abbr>   <?php  echo $data['fax']; ?>
 						</address>
 					</td>
 					<td class="right">

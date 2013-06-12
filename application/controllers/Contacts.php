@@ -12,13 +12,25 @@ class Contacts extends CI_Controller {
       }
     }
 
+    public function edit($id)
+    {
+
+        $this->load->model('Contacts_model');
+        $this->load->view('templates/header');
+        $data['data'] = $this->Contacts_model->edit($id);
+        $this->load->view('contacts/edit', $data);
+        $this->load->view('templates/footer');
+
+    }
+
     public function view($id)
     {
 
-        $this->load->model('Company_model');
+        $this->load->model('Contacts_model');
         $this->load->view('templates/header');
-        $data['result'] = $this->Company_model->view();
-        $this->load->view('company/view', $data);
+        $data['data'] = $this->Contacts_model->view($id);
+        $data['workorders'] = $this->Contacts_model->view_wo($id);
+        $this->load->view('contacts/view', $data);
         $this->load->view('templates/footer');
 
     }
