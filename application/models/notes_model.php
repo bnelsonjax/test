@@ -44,8 +44,9 @@ class Notes_model extends CI_Model {
               $data = array(
                'note' => $_POST['note']
             );
-              $this->db->update('company_notes', $data);
               $this->db->where('id', $id);
+              $this->db->update('company_notes', $data);
+
 
 	}
 
