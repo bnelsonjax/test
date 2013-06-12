@@ -38,6 +38,13 @@ class Notes_model extends CI_Model {
                 return $query->result_array();
 	}
 
+	function edit($formdata)
+	{
+              $this->db->where('id', $id);
+              $this->db->update('mytable', $data);
+
+	}
+
      public function delete($id)	{
 
                 $this->db->where('id', $id);

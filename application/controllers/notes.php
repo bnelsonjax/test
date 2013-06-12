@@ -6,6 +6,8 @@ class Notes extends CI_Controller {
     {
       parent::__construct();
       session_start();
+      $this->load->model('Notes_model');
+      //$this->load->helper(form);
 
       if ( !isset($_SESSION['username'])) {
          redirect('admin');
@@ -18,7 +20,6 @@ class Notes extends CI_Controller {
 
     public function view($id) {
 
-        $this->load->model('Notes_model');
         $data['data']  = $this->Notes_model->view($id);
         $this->load->view('templates/header');
         $this->load->view('notes/view', $data);
@@ -26,47 +27,54 @@ class Notes extends CI_Controller {
 
     }
 
-		public function add() {
-				$this->model('Notes');
+    public function add() {
 
-				if (isset($_POST["add"]))
-				{
-						$this->model('Notes');
-						$this->_model->add();
-						$url = "/Company/view/".$_POST['companyId'];
-						\Logic\System\Lib\Helper::redirect($url);
-				}
+    		if (isset($_POST["add"]))
+    		{
+    				$this->model('Notes');
+    				$this->_model->add();
+    				$url = "/Company/view/".$_POST['companyId'];
+    				\Logic\System\Lib\Helper::redirect($url);
+    		}
 
-				$this->model('Company');
-				$id = \Logic\System\Lib\Helper::getUrlParam();
-				/**
-				 * TODO: Change the way we get our ID
-				 * We should'nt need to use a DB call
-				 */
-				$data = $this->_model->getCompanyId($id);
-				$data['note'] = $this->_model->viewLocations($id);
-				$this->_load->header();
-				$this->_load->view('notes/add', $data);
-				$this->footer();
-		}
+    		$this->model('Company');
+    		$id = \Logic\System\Lib\Helper::getUrlParam();
+    		$data = $this->_model->getCompanyId($id);
+    		$data['note'] = $this->_model->viewLocations($id);
+    		$this->_load->header();
+    		$this->_load->view('notes/add', $data);
+    		$this->footer();
+    }
 
-    public function edit($id) {
-        $this->model('Notes_model');
 
-        if (isset($_POST["edit"]))
-        {
-            $this->_model->edit_note($id);
-            $url = "/Notes/view/" . $id;
-            \Logic\System\Lib\Helper::redirect($url);
-        }
-          $data['notes']      = $this->_model->viewNotes($id);
-        $this->_load->header();
-        $this->_load->view('Notes/edit_note', $data);
-        $this->footer();
+        public function edit($id) {
+
+            $nid = $id;
+            $note = $this->input->post('note');
+              $formdata = array(
+                       'note' => $note
+                       ,'id' => $id
+                    );
+
+
+    		if (isset($_POST["edit"]))
+    		{
+    			$this->Notes_model->edit($id);
+    			$url = "/notes/view/" . $id;
+    			redirect($url);
+    		}
+        $data['data']  = $this->Notes_model->view($id);
+        $this->load->view('templates/header');
+        $this->load->view('notes/edit', $data);
+        $this->load->view('templates/footer');
    }
 
+	function success() {
+			echo 'this form has been successfully submitted with all validation being passed. All messages or logic here. Please note
+			sessions have not been used and would need to be added in to suit your app';
+    }
+
     public function delete($id) {
-                $this->load->model('Notes_model');
                 $this->Notes_model->delete($id);
                 $this->load->view('templates/header');
                 $this->load->view('notes/view', $cid);
@@ -74,7 +82,7 @@ class Notes extends CI_Controller {
     }
 
     public function printNote($id) {
-        $this->load->model('Notes_model');
+
         $data['data']  = $this->Notes_model->view($id);
 		$this->load->view('notes/print', $data);
 

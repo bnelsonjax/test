@@ -33,8 +33,8 @@ class Admin extends CI_Controller {
                 redirect('home');
             }
         }
-        $data['data'] = "Username or Password Incorrect";
-        $this->load->view('adminLogin', $data);
+
+        $this->load->view('adminLogin');
     }
 
     public function logout() {
