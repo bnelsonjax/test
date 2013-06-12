@@ -38,12 +38,11 @@ class Notes_model extends CI_Model {
                 return $query->result_array();
 	}
 
-	public function edit($data)
+	public function edit($id)
 	{
 
               $data = array(
-               'note' => $_POST['note'],
-               'time' => $_POST['time']
+               'note' => $_POST['note']
             );
               $this->db->update('company_notes', $data);
               $this->db->where('id', $id);

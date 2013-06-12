@@ -49,14 +49,6 @@ class Notes extends CI_Controller {
 
         public function edit($id) {
 
-            $nid = $id;
-            $note = $this->input->post('note');
-              $formdata = array(
-                       'note' => $note
-                       ,'id' => $id
-                    );
-
-
     		if (isset($_POST["edit"]))
     		{
     			$this->Notes_model->edit($id);
