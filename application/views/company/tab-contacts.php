@@ -5,7 +5,7 @@
 					<li class="account dropdown dd-1">
 												<a data-toggle="dropdown" href="l" class="glyphicons cogwheel"><span class="hidden-phone">Options</span><i></i></a>
 						<ul class="dropdown-menu pull-right">
-							<li><a href="l" class="glyphicons notes">New Note<i></i></a></li>
+							<li><a href="/contacts/add/<?php  echo $data['id']; ?>" class="glyphicons parents">New Contact<i></i></a></li>
 						</ul>
 					</li>
 					<!-- // Tab Menu Options -->

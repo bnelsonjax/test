@@ -23,17 +23,10 @@ $class = 'label label-danger';
     	</div>
     	<!-- // BreadCrumb Widget END -->
 
-    	<!-- Widget -->
-    	<div class="widget" style="margin-top: -1px;">
-    		<!-- Widget heading -->
-    		<div class="widget-head">
-    			<h4 class="heading glyphicons calendar"><i></i>Contact information</h4>
-    		</div>
-    		<!-- // Widget heading END -->
-    		<div class="well margin-none">
+    <div class="well margin-none">
 		<table class="table">
         <!-- Company Info Table -->
-        <tbody>
+            <tbody>
 				<tr>
 					<td style="width: 50%;">
 						<h2><?php echo $data['firstName'] . " " . $data['lastName']; ?></h2>
@@ -64,51 +57,64 @@ $class = 'label label-danger';
                                 </a>
                                 <ul class="dropdown-menu">
                                   <li><a href="/contacts/edit/<?php  echo $data['id']; ?>">Edit Contact</a></li>
-                                  <li><a href="/contacts/delet/<?php  echo $data['id']; ?>">Delete Contact</a></li>
+                                  <li><a href="#modal-simple" data-toggle="modal">Delete Contact</a></li>
                                 </ul>
                             </div>
-
-
-
 						</address>
 					</td>
 				</tr>
 			</tbody>
-           <!-- Company Info Table End -->
-		</table>
+		</table>   <!-- Company Info Table End -->
 	</div>
-    	</div>
-
-
-
-
-
               <br>
-    <!-- Tab Bar -->
-    <div class="tabsbar">
-    	<ul>
-    		<li class="glyphicons blog active"><a href="#tabA-1" data-toggle="tab"><i></i> Company Notes</a></li>
-    		<li class="glyphicons parents"><a href="#tabA-2" data-toggle="tab"><i></i> Tickets</a></li>
-    	</ul>
-    </div>
-    <div class="tab-content">
-         <!-- Tab 1 Start-->
-        <div class="tab-pane active" id="tabA-1">
-            <? include("tab-wo.php"); ?>
-    	</div>
-<!-- Tab 1 End-->
-         <!-- Tab 2 Start-->
-        <div class="tab-pane" id="tabA-2">
-        Support Tickets by this contact would show up here (future feature)
-          <? //include("tab-contacts.php"); ?>
-    	</div><!-- Tab 2 End-->
-    </div>     <!-- Tab Content End-->
-
-
-
-
-
-
+          <!-- Tab Bar -->
+          <div class="tabsbar">
+          	<ul>
+          		<li class="glyphicons notes_2 active"><a href="#tabA-1" data-toggle="tab"><i></i> Work Orders</a></li>
+          		<li class="glyphicons life_preserver"><a href="#tabA-2" data-toggle="tab"><i></i> Tickets</a></li>
+          	</ul>
+          </div>
+          <div class="tab-content">
+               <!-- Tab 1 Start-->
+              <div class="tab-pane active" id="tabA-1">
+                  <? include("tab-wo.php"); ?>
+          	</div>
+      <!-- Tab 1 End-->
+               <!-- Tab 2 Start-->
+              <div class="tab-pane" id="tabA-2">
+              Support Tickets by this contact would show up here (future feature)
+                <? //include("tab-contacts.php"); ?>
+          	</div><!-- Tab 2 End-->
+          </div>     <!-- Tab Content End-->
 
     </div>
 </div>
+
+
+
+
+<!-- Modal -->
+<div class="modal hide fade" id="modal-simple">
+
+	<!-- Modal heading -->
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h3>Confirm</h3>
+	</div>
+	<!-- // Modal heading END -->
+
+	<!-- Modal body -->
+	<div class="modal-body">
+		<p>Are you sure you want to submit the changes?</p>
+	</div>
+	<!-- // Modal body END -->
+
+	<!-- Modal footer -->
+	<div class="modal-footer">
+		<a href="/notes/delete/<?php  echo $data['id']; ?>" class="btn btn-primary" data-toggle="modal">Save</a>
+		<a href="#" data-dismiss="modal" class="btn btn-danger">Cancel</a>
+	</div>
+	<!-- // Modal footer END -->
+
+</div>
+<!-- // Modal END -->
