@@ -160,7 +160,7 @@
 							</li>
 							<li>
 								<span>
-									<a class="btn btn-default btn-mini pull-right" href="/admin/logout">Sign Out</a>
+									<a class="btn btn-default btn-mini pull-right" href="/auth/logout">Sign Out</a>
 								</span>
 							</li>
 						</ul>
@@ -198,7 +198,7 @@
 				<span>
 					<ul>
 						<li><a href="" class="glyphicons lock"><i></i>Account</a></li>
-						<li><a href="/admin/logout" class="glyphicons eject"><i></i>Logout</a></li>
+						<li><a href="/auth/logout" class="glyphicons eject"><i></i>Logout</a></li>
 					</ul>
 				</span>
 			</span>

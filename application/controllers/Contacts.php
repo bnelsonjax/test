@@ -8,9 +8,12 @@ class Contacts extends CI_Controller {
       session_start();
       $this->load->model('Contacts_model');
 
-      if ( !isset($_SESSION['username'])) {
-         redirect('admin');
-      }
+          // Require members to be logged in. If not logged in, redirect to the Ion Auth login page.
+          //
+          if( ! $this->ion_auth->logged_in())
+          {
+            redirect(base_url() . 'auth/login');
+          }
     }
 
     public function add($id) {
