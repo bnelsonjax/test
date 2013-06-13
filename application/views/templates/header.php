@@ -1,3 +1,11 @@
+<?
+$user = $this->ion_auth->user()->row();
+		$fname =  $user->first_name;
+   		$lname =  $user->last_name;
+        $email =  $user->email;
+        $avatar =  $user->avatar;
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->
@@ -143,7 +151,7 @@
 
 					<!-- Profile / Logout menu -->
 					<li class="account dropdown dd-1">
-												<a data-toggle="dropdown" href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light" class="glyphicons logout lock"><span class="hidden-phone">mosaicpro</span><i></i></a>
+												<a data-toggle="dropdown" href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light" class="glyphicons logout lock"><span class="hidden-phone"><?php echo $fname; ?> <?php echo $lname; ?></span><i></i></a>
 						<ul class="dropdown-menu pull-right">
 							<li><a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light" class="glyphicons cogwheel">Settings<i></i></a></li>
 							<li><a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light" class="glyphicons camera">My Photos<i></i></a></li>
@@ -152,8 +160,8 @@
 									<span class="heading">Profile <a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light" class="pull-right">edit</a></span>
 									<span class="img"></span>
 									<span class="details">
-										<a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light">Mosaic Pro</a>
-										contact@mosaicpro.biz
+										<a href="."><?php echo $fname; ?> <?php echo $lname; ?></a>
+										<?php echo $email; ?>
 									</span>
 									<span class="clearfix"></span>
 								</span>
@@ -191,10 +199,11 @@
 			<!-- Scrollable menu wrapper with Maximum height -->
 			<div class="slim-scroll" data-scroll-height="800px">
 
-			<!-- Sidebar Profile -->
+
+  			<!-- Sidebar Profile -->
 			<span class="profile">
-				<p>Welcome <?php echo $_SESSION ["username"]; ?><a href="my_account"></a></p>
-				<a class="img" href="my_account"><img src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/images/avatar-style-light.jpg" alt="Avatar" /></a>
+				<p>Welcome <?php echo $fname; ?> <?php echo $lname; ?><a href="my_account"></a></p>
+				<a class="img" href="my_account"><img src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/public/files/avatar/<?php echo $avatar; ?>" alt="Avatar" /></a>
 				<span>
 					<ul>
 						<li><a href="" class="glyphicons lock"><i></i>Account</a></li>
