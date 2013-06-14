@@ -4,15 +4,16 @@ class Company extends CI_Controller {
 
     function __construct()
     {
-      parent::__construct();
-      session_start();
+        parent::__construct();
+        session_start();
+        $this->load->model('Company_model');
 
-          // Require members to be logged in. If not logged in, redirect to the Ion Auth login page.
-          //
-          if( ! $this->ion_auth->logged_in())
-          {
-            redirect(base_url() . 'auth/login');
-          }
+                // Require members to be logged in. If not logged in, redirect to the Ion Auth login page.
+                //
+                if( ! $this->ion_auth->logged_in())
+                {
+                  redirect(base_url() . 'auth/login');
+                }
     }
 
     public function index() {
@@ -21,9 +22,22 @@ class Company extends CI_Controller {
        	$this->load->view('templates/footer');
     }
 
+    public function editcc($id) {
+
+                if (isset($_POST["edit"]))
+    		{
+    			$this->Company_model->editcc($id);
+                redirect('company/view/'.$id);
+    		}
+
+        $data['data']  = $this->Company_model->view($id);
+        $this->load->view('templates/header');
+        $this->load->view('company/editcc', $data);
+        $this->load->view('templates/footer');
+    }
+
     public function view($id) {
 
-        $this->load->model('Company_model');
         $data['data']  = $this->Company_model->view($id);
         $data['notes'] = $this->Company_model->viewNotes($id);
         $data['contacts']   = $this->Company_model->viewContacts($id);
@@ -39,7 +53,6 @@ class Company extends CI_Controller {
 
     public function viewAll() {
 
-        $this->load->model('Company_model');
         $this->load->view('templates/header');
         $data['result'] = $this->Company_model->viewAll();
         $this->load->view('company/viewAll', $data);
@@ -49,7 +62,6 @@ class Company extends CI_Controller {
 
     public function notes($id) {
 
-        $this->load->model('Company_model');
         $data['result'] = $this->Company_model->viewNotes($id);
         $this->load->view('templates/header');
         $this->load->view('company/notesList', $data);
@@ -59,7 +71,6 @@ class Company extends CI_Controller {
 
     public function test($id) {
 
-        $this->load->model('Company_model');
         $data['result'] = $this->Company_model->viewNotes($id);
         $this->load->view('templates/header');
         $this->load->view('company/test', $data);

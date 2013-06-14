@@ -3,9 +3,9 @@
 				<ul class="topnav pull-right">
  					<!-- TAB Menu Options -->
 					<li class="account dropdown dd-1">
-												<a data-toggle="dropdown" href="l" class="glyphicons cogwheel"><span class="hidden-phone">Options</span><i></i></a>
+												<a data-toggle="dropdown" href="" class="glyphicons cogwheel"><span class="hidden-phone">Options</span><i></i></a>
 						<ul class="dropdown-menu pull-right">
-							<li><a href="company/editcc" class="glyphicons notes">Edit Credit Card<i></i></a></li>
+							<li><a href="/company/editcc/<?php  echo $data['id']; ?>" class="glyphicons notes">Edit Credit Card<i></i></a></li>
 						</ul>
 					</li>
 					<!-- // Tab Menu Options -->

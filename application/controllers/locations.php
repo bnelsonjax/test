@@ -21,7 +21,7 @@ class Locations extends CI_Controller {
                 if (isset($_POST["add"]))
     		{
     			$this->Locations_model->add($id);
-                redirect('locations/view/'.$id);
+                redirect('company/view/'.$id);
     		}
         $data['data'] = $id;
         $this->load->view('templates/header');
@@ -54,9 +54,7 @@ class Locations extends CI_Controller {
 
     public function delete($id) {
         $this->Locations_model->delete($id);
-        $this->load->view('templates/header');
-        $this->load->view('company/view', $data['cid']);
-        $this->load->view('templates/footer');
+        redirect('company/view/'.$id);
 
     }
 
