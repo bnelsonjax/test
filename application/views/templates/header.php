@@ -151,13 +151,13 @@ $user = $this->ion_auth->user()->row();
 
 					<!-- Profile / Logout menu -->
 					<li class="account dropdown dd-1">
-												<a data-toggle="dropdown" href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light" class="glyphicons logout lock"><span class="hidden-phone"><?php echo $fname; ?> <?php echo $lname; ?></span><i></i></a>
+												<a data-toggle="dropdown" href="" class="glyphicons logout lock"><span class="hidden-phone"><?php echo $fname; ?> <?php echo $lname; ?></span><i></i></a>
 						<ul class="dropdown-menu pull-right">
-							<li><a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light" class="glyphicons cogwheel">Settings<i></i></a></li>
-							<li><a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light" class="glyphicons camera">My Photos<i></i></a></li>
+							<li><a href="/user/my_account" class="glyphicons cogwheel">Settings<i></i></a></li>
+							<li><a href="/user/my_account" class="glyphicons camera">My Photos<i></i></a></li>
 							<li class="profile">
 								<span>
-									<span class="heading">Profile <a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-light" class="pull-right">edit</a></span>
+									<span class="heading">Profile <a href="/user/my_account" class="pull-right">edit</a></span>
 									<span class="img"></span>
 									<span class="details">
 										<a href="."><?php echo $fname; ?> <?php echo $lname; ?></a>
@@ -203,10 +203,10 @@ $user = $this->ion_auth->user()->row();
   			<!-- Sidebar Profile -->
 			<span class="profile">
 				<p>Welcome <?php echo $fname; ?> <?php echo $lname; ?><a href="my_account"></a></p>
-				<a class="img" href="my_account"><img src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/public/files/avatar/<?php echo $avatar; ?>" alt="Avatar" /></a>
+				<a class="img" href="/user/my_account"><img src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/public/files/avatar/<?php echo $avatar; ?>" alt="Avatar" /></a>
 				<span>
 					<ul>
-						<li><a href="" class="glyphicons lock"><i></i>Account</a></li>
+						<li><a href="/user/my_account" class="glyphicons lock"><i></i>Account</a></li>
 						<li><a href="/auth/logout" class="glyphicons eject"><i></i>Logout</a></li>
 					</ul>
 				</span>

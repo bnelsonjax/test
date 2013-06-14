@@ -41,8 +41,8 @@
 //$route['(:any)'] = 'pages/view/$1';
 
 $route['default_controller'] = "Home";
-$route['logout'] = "admin/logout";
-$route['login'] = "admin/index";
+$route['logout'] = "auth/logout";
+$route['login'] = "auth/login";
 //$route['(:any)'] = '';
 $route['404_override'] = 'error/error_404';
 

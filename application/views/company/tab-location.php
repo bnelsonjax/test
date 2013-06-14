@@ -5,7 +5,7 @@
 					<li class="account dropdown dd-1">
 												<a data-toggle="dropdown" href="l" class="glyphicons cogwheel"><span class="hidden-phone">Options</span><i></i></a>
 						<ul class="dropdown-menu pull-right">
-							<li><a href="l" class="glyphicons notes">New Note<i></i></a></li>
+							<li><a href="/locations/add/<?php  echo $row['cid']; ?>" class="glyphicons notes">New Location<i></i></a></li>
 						</ul>
 					</li>
 					<!-- // Tab Menu Options -->

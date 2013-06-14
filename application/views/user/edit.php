@@ -12,6 +12,10 @@
                                             </li>
 
                                             <li>
+                                                <a class="glyphicons settings" data-toggle="tab" href="#password-settings"><em></em>Password settings</a>
+                                            </li>
+
+                                            <li>
                                                 <a class="glyphicons eye_open" data-toggle="tab" href="#privacy-settings"><em></em>Privacy settings</a>
                                             </li>
                                         </ul>
@@ -130,18 +134,6 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
                                                         "john.doe2012"> <span class="btn-action single glyphicons circle_question_mark" data-original-title=
                                                         "Username can't be changed" data-placement="top" data-toggle="tooltip" style="margin: 0;"><em></em></span>
 
-                                                        <div class="separator"></div><label for="inputPasswordOld">Old password</label> <input class="span10" id="inputPasswordOld"
-                                                        placeholder="Leave empty for no change" type="password" value=""> <span class=
-                                                        "btn-action single glyphicons circle_question_mark" data-original-title=
-                                                        "Leave empty if you don't wish to change the password" data-placement="top" data-toggle="tooltip" style=
-                                                        "margin: 0;"><em></em></span>
-
-                                                        <div class="separator"></div><label for="inputPasswordNew">New password</label> <input class="span12" id="inputPasswordNew"
-                                                        placeholder="Leave empty for no change" type="password" value="">
-
-                                                        <div class="separator"></div><label for="inputPasswordNew2">Repeat new password</label> <input class="span12" id=
-                                                        "inputPasswordNew2" placeholder="Leave empty for no change" type="password" value="">
-
                                                         <div class="separator"></div>
                                                     </div><!-- // Column END -->
                                                 </div><!-- // Row END -->
@@ -226,6 +218,50 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
                                                 </div><!-- // Form actions END -->
                                             </div>
 
+                                            <div class="tab-pane" id="password-settings">
+                                                <!-- Row -->
+
+
+                                             <div class="span3">
+                                                        <strong>Change password</strong>
+
+                                                        <p class="muted">Password should be 5 or more characters.</p>
+                                                    </div>
+
+                                             <div class="span9">
+
+<h1><?php echo lang('change_password_heading');?></h1>
+
+<div id="infoMessage"><?php echo $message;?></div>
+
+<?php echo form_open("auth/change_password");?>
+
+      <p>
+            <?php echo lang('change_password_old_password_label', 'old_password');?> <br />
+            <?php echo form_input($old_password);?>
+      </p>
+
+      <p>
+            <label for="new_password"><?php echo sprintf(lang('change_password_new_password_label'), $min_password_length);?></label> <br />
+            <?php echo form_input($new_password);?>
+      </p>
+
+      <p>
+            <?php echo lang('change_password_new_password_confirm_label', 'new_password_confirm');?> <br />
+            <?php echo form_input($new_password_confirm);?>
+      </p>
+
+      <?php echo form_input($user_id);?>
+      <p><?php echo form_submit('submit', lang('change_password_submit_btn'));?></p>
+
+<?php echo form_close();?>
+
+
+                                            </div>
+
+
+
+                                            </div>
                                             <div class="tab-pane" id="privacy-settings">
                                                 <div class="uniformjs">
                                                     <label class="checkbox"><input checked="checked" type="checkbox"> Lorem ipsum dolor sit amet, consectetur adipiscing
