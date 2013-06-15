@@ -26,9 +26,6 @@ $page = $controller .'/' . $function;
 	<!-- JQueryUI -->
 	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/system/jquery-ui/js/jquery-ui-1.9.2.custom.min.js"></script>
 
-	<!-- LESS.js Library -->
-	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/system/less.min.js"></script>
-
 	<!-- Modernizr -->
 	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/system/modernizr.js"></script>
 
@@ -49,13 +46,16 @@ $page = $controller .'/' . $function;
 	<!-- Cookie Plugin -->
 	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/system/jquery.cookie.js"></script>
 
+	<!-- Common Demo Script -->
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/demo/common.js?1369753444"></script>
+
     <?php if ($page == 'form/elements'): ?>
 	<!-- JQueryUI Touch Punch -->
 	<!-- small hack that enables the use of touch events on sites using the jQuery UI user interface library -->
 	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/system/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
     <?php endif; ?>
 
-    <?php if ($page == 'test/index'): ?>
+    <?php if ($page == 'home/index'): ?>
 	<!-- SlimScroll Plugin -->
 	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/other/jquery-slimScroll/jquery.slimscroll.min.js"></script>
     <?php endif; ?>
@@ -65,7 +65,7 @@ $page = $controller .'/' . $function;
 	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/demo/common.js?1370657326"></script>
     <?php endif; ?>
 
-    <?php if ($page == 'test/index'): ?>
+    <?php if ($page == 'home/index'): ?>
 	<!-- Holder Plugin -->
 	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/other/holder/holder.js"></script>
     <?php endif; ?>

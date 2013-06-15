@@ -75,6 +75,9 @@ $page = $controller .'/' . $function;
 	<link href="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/tables/DataTables/media/css/DT_bootstrap.css" rel="stylesheet" />
     <?php endif; ?>
 
+    	<!-- LESS.js Library -->
+	<script src="http://<?php  echo $_SERVER['HTTP_HOST']; ?>/common/theme/scripts/plugins/system/less.min.js"></script>
+
 </head>
 
 <?php echo $page; ?>
