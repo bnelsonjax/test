@@ -69,20 +69,45 @@ class Company extends CI_Controller {
 
     }
 
-    public function test($id) {
+    public function edit($id) {
 
-        $data['result'] = $this->Company_model->viewNotes($id);
+                if (isset($_POST["edit"]))
+    		{
+    			$this->Company_model->edit($id);
+                redirect('company/view/'.$id);
+    		}
+
+        $data['status']  = $this->Company_model->get_companystatuslist();
+        $data['type']  = $this->Company_model->get_companytype();
+        $data['contacts']  = $this->Company_model->get_primarycontactlist($id);
+        $data['data']  = $this->Company_model->view($id);
         $this->load->view('templates/header');
-        $this->load->view('company/test', $data);
+        $this->load->view('company/edit', $data);
         $this->load->view('templates/footer');
-
     }
 
-
     public function add() {
+
         $this->load->view('templates/header');
 	    $data['value'] = "This is the data value";
         $this->load->view('company/add',$data);
         $this->load->view('templates/footer');
     }
+
+	public function country_dropdown() {
+
+		$this->load->helper('dropdown');
+		$this->data['title'] = 'Country';
+		$this->data['country'] = buildCountryDropdown('country', $this->input->post('country'));
+		$this->load->view('dropdown', $this->data);
+	}
+
+	public function test($id) {
+
+        $data['data']  = $this->Company_model->get_primarycontactlist($id);
+        print_r($data);
+	}
+
+
+
 }

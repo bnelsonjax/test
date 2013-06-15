@@ -57,14 +57,14 @@
 
 	<!-- Modal body -->
 	<div class="modal-body">
-		<p>Are you sure you want to submit the changes?</p>
+		<p>Are you sure you want to delete the note?</p>
 	</div>
 	<!-- // Modal body END -->
 
 	<!-- Modal footer -->
 	<div class="modal-footer">
-		<a href="/notes/delete/<?php  echo $data['nid']; ?>" class="btn btn-primary" data-toggle="modal">Save</a>
-		<a href="#" data-dismiss="modal" class="btn btn-danger">Cancel</a>
+		<a href="/notes/delete/<?php  echo $data['nid']; ?>?delete" class="btn btn-primary" data-toggle="modal">Yes</a>
+		<a href="#" data-dismiss="modal" class="btn btn-danger">No</a>
 	</div>
 	<!-- // Modal footer END -->
 

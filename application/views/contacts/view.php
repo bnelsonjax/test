@@ -46,12 +46,9 @@ $class = 'label label-danger';
 							<?php  if (!$data['dateUpdated']): ?> Last updated: Never <?php  else : ?> Last updated:
                             <?php  echo $data['dateUpdated']; ?><br>
                             <?php  endif; ?>
-                            </br>
-                            </br>
-                            </br>
-                            </br>
-                              <div class="btn-group pull-right">
-                                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+
+                              <div style="position:absolute;bottom:0px;left:0%;right:0%" class="btn-group pull-right">
+                                <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
                                   Options
                                   <span class="caret"></span>
                                 </a>

@@ -1,23 +1,37 @@
 <?php
 
-if ( $data['active'] === '1' )
-{
+if ( $data['active'] === '1' ) {
 $active = 'Active';
 $class = 'label label-primary';
-}
-else
-{
+
+} else if( $data['active'] === '2' ) {
 $active = 'Suspended';
 $class = 'label label-danger';
+
+} else {
+$active = 'Inactive';
+$class = 'label label-warning';
 }
 
+$user = $this->ion_auth->user()->row();
+		$fname =  $user->first_name;
+   		$lname =  $user->last_name;
+        $email =  $user->email;
+        $uid =     $user->id;
+
+
+
+$info = pathinfo( __FILE__ );
+$page = ucwords( $info['filename'] );
 
 ?>
 
 <div id="content">
 <div class="separator bottom"></div>
  <div class="innerLR">
+
 	<div class="well margin-none">
+
 		<table class="table">
         <!-- Company Info Table -->
         <tbody>
@@ -47,7 +61,17 @@ $class = 'label label-danger';
                             <?php  endif; ?>
 							<div class="separator line"></div>
                             <abbr title="Google Map"><a href="#">City Map:</a></abbr><br>
-						</address>
+                              <div style="position:absolute;bottom:0px;left:0%;right:0%" class="btn-group pull-right">
+                                <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+                                  Options
+                                  <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="/company/edit/<?php  echo $data['id']; ?>">Edit Company</a></li>
+                                  <li><a href="#modal-simple" data-toggle="modal">Delete Contact</a></li>
+                                </ul>
+                            </div>
+                        </address>
 					</td>
 				</tr>
 			</tbody>

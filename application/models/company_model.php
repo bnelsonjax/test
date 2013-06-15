@@ -59,6 +59,8 @@ class Company_model extends CI_Model {
                           	, l.state
                           	, l.zip
                           	, l.country
+                            , cs.name AS csName
+                            , cs.id AS csId
                             , ct.name AS typeName
                             , coun.name AS country');
         $this->db->from('company c');
@@ -66,6 +68,7 @@ class Company_model extends CI_Model {
         $this->db->join('locations l','c.id = l.cid','left');
         $this->db->join('countries coun','coun.id = l.country','left');
         $this->db->join('enum_company_type ct','ct.id = c.type','left');
+        $this->db->join('enum_company_status cs','cs.id = c.active','left');
         $this->db->where('c.id', $id);
         $query = $this->db->get();
         return $query->row_array();
@@ -150,9 +153,27 @@ class Company_model extends CI_Model {
         return $query->result_array();
 	}
 
-	public function editcc($id)
-	{
-       $data = array(
+	public function edit($id) {
+
+        $today = date("F j, Y, g:i a");
+        $data = array(
+                       'name' => $_POST['name']
+                       ,'type' => $_POST['type']
+                       ,'website' => $_POST['website']
+                       ,'active' => $_POST['active']
+                       ,'primary_contact' => $_POST['primary_contact']
+                       ,'fax' => $_POST['fax']
+                       ,'phone' => $_POST['phone']
+                       ,'dateUpdated' => $today);
+        $this->db->where('id', $id);
+        $this->db->update('company', $data);
+        //echo $this->db->last_query();
+
+	}
+
+	public function editcc($id) {
+
+        $data = array(
                        'cc_name' => $_POST['cc_name']
                        ,'cc_num' => $_POST['cc_num']
                        ,'cc_expmm' => $_POST['cc_expmm']
@@ -166,5 +187,46 @@ class Company_model extends CI_Model {
         $this->db->update('company', $data);
 
 	}
+
+    function get_companystatuslist() {
+
+        $this->db->select('*');
+        $records=$this->db->get('enum_company_status');
+        $data=array();
+            foreach($records->result() as $row)
+            {
+            $data[$row->id] = $row->name;
+            }
+        return ($data);
+    }
+
+    function get_primarycontactlist($id) {
+
+        $this->db->select('*');
+        $this->db->where('cid', $id);
+        $records=$this->db->get('contacts');
+
+        $data=array();
+            foreach($records->result() as $row)
+            {
+            $data[$row->id] = $row->firstName .' ' . $row->lastName;
+            }
+        return ($data);
+    }
+
+    function get_companytype() {
+
+        $this->db->select('*');
+        $records=$this->db->get('enum_company_type');
+
+        $data=array();
+            foreach($records->result() as $row)
+            {
+            $data[$row->id] = $row->name;
+            }
+        return ($data);
+    }
+
+
 
 }

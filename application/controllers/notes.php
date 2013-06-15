@@ -56,7 +56,13 @@ class Notes extends CI_Controller {
     }
 
     public function delete($id) {
-        $this->Notes_model->delete($id);
+
+    		if (isset($_GET["delete"]))
+    		{
+    			$this->Notes_model->delete($id);
+    			$url = "/company/view/" . $id;
+    			redirect($url);
+            }
         $this->load->view('templates/header');
         $this->load->view('company/view', $cid);
         $this->load->view('templates/footer');
